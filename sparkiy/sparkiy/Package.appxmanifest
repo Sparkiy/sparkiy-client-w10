@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
+  <Identity Name="1c1d1d45-d699-499a-9c06-aefdd8fe3f57" Publisher="CN=Aleksandar Toplek" Version="2.0.0.0" />
+  <mp:PhoneIdentity PhoneProductId="1c1d1d45-d699-499a-9c06-aefdd8fe3f57" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Properties>
+    <DisplayName>sparkiy</DisplayName>
+    <PublisherDisplayName>Aleksandar Toplek</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.0.0" MaxVersionTested="10.0.0.0" />
+  </Dependencies>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="sparkiy.App">
+      <uap:VisualElements DisplayName="sparkiy" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="sparkiy" BackgroundColor="transparent">
+        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png">
+        </uap:DefaultTile>
+        <uap:SplashScreen Image="Assets\SplashScreen.png" />
+        <uap:InitialRotationPreference>
+          <uap:Rotation Preference="portrait" />
+          <uap:Rotation Preference="landscape" />
+          <uap:Rotation Preference="portraitFlipped" />
+          <uap:Rotation Preference="landscapeFlipped" />
+        </uap:InitialRotationPreference>
+      </uap:VisualElements>
+      <uap:ApplicationContentUriRules>
+        <uap:Rule Match="http://*.sparkiy.com" Type="include" WindowsRuntimeAccess="all" />
+        <uap:Rule Match="http://*.onsparkiy.com" Type="include" WindowsRuntimeAccess="all" />
+      </uap:ApplicationContentUriRules>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+    <Capability Name="codeGeneration" />
+    <uap:Capability Name="picturesLibrary" />
+    <uap:Capability Name="removableStorage" />
+    <uap:Capability Name="userAccountInformation" />
+    <uap:Capability Name="videosLibrary" />
+    <DeviceCapability Name="location" />
+  </Capabilities>
+</Package>
