@@ -20,3 +20,7 @@
   build:
     project: sparkiy\sparkiy.sln
     parallel: true
+
+  notifications:
+    - provider: Webhook
+	  url: https://webhooks.gitter.im/e/fc3c63967ea87299f8ea
