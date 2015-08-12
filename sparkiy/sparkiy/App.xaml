@@ -5,4 +5,12 @@
     xmlns:local="using:sparkiy"
     RequestedTheme="Light">
 
+	<Application.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="/Styles/Colors.xaml" />
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+    </Application.Resources>
+	
 </Application>

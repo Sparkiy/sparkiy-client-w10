@@ -1,0 +1,34 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:sparkiy.Styles">
+    <ResourceDictionary.ThemeDictionaries>
+		
+		<!-- Light theme -->
+		<ResourceDictionary x:Key="Light">
+			
+			<!-- Colors -->
+            <Color x:Key="AccentColor">#2E9DC8</Color>
+			
+			<!-- Title bar colors -->
+            <Color x:Key="TitleBarAccentColor">#2E9DC8</Color>
+            <Color x:Key="TitleBarForegroundColor">#FFFFFF</Color>
+            <Color x:Key="TitleBarButtonBackgroundColor">#2E9DC8</Color>
+            <Color x:Key="TitleBarButtonBackgroundHoverColor">#6cbad8</Color>
+            <Color x:Key="TitleBarButtonBackgroundPressedColor">#abd7e9</Color>
+            <Color x:Key="TitleBarButtonBackgroundInactiveColor">#2E9DC8</Color>
+            <Color x:Key="TitleBarButtonForegroundColor">#FFFFFFFF</Color>
+            <Color x:Key="TitleBarButtonForegroundHoverColor">#FFFFFFFF</Color>
+            <Color x:Key="TitleBarButtonForegroundPressedColor">#FFFFFFFF</Color>
+            <Color x:Key="TitleBarButtonForegroundInactiveColor">#FFFFFFFF</Color>
+
+            <!-- Brushes -->
+			<SolidColorBrush x:Key="AccentBrush" Color="{StaticResource AccentColor}" />
+			
+            <!-- Override system accent color -->
+            <Color x:Key="SystemAccentColor">#2E9DC8</Color>
+
+        </ResourceDictionary>
+		
+	</ResourceDictionary.ThemeDictionaries>
+</ResourceDictionary>
