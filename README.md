@@ -1,6 +1,4 @@
-# client-w10
-
-[![Production branch build status](https://ci.appveyor.com/api/projects/status/35l3go04er8y717u/branch/production?svg=true)](https://ci.appveyor.com/project/AleksandarDev/client-w10/branch/production)
+# client-w10 [![Production branch build status](https://ci.appveyor.com/api/projects/status/35l3go04er8y717u/branch/production?svg=true)](https://ci.appveyor.com/project/AleksandarDev/client-w10/branch/production)
 
 [![Join the chat at https://gitter.im/Sparkiy](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Sparkiy?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 

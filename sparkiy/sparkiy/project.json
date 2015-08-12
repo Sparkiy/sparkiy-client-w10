@@ -2,7 +2,7 @@
   "dependencies": {
     "Microsoft.ApplicationInsights": "1.0.0",
     "Microsoft.ApplicationInsights.PersistenceChannel": "1.0.0",
-    "Microsoft.ApplicationInsights.WindowsApps": "1.0.0",
+    "Microsoft.ApplicationInsights.WindowsApps": "1.1.0",
     "Microsoft.AspNet.WebApi.Client": "5.2.3",
     "Microsoft.NETCore.UniversalWindowsPlatform": "5.0.0",
     "Mindscape.Raygun4Net": "5.1.0",
