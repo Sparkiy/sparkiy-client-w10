@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Mindscape.Raygun4Net;
+using Serilog;
 
 namespace sparkiy
 {
@@ -23,18 +24,35 @@ namespace sparkiy
     /// </summary>
     sealed partial class App : Application
     {
+	    private ILogger logger;
+
+
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
         /// </summary>
         public App()
         {
+	        this.InitializeLogging();
 			this.InitializeTracking();
 	        this.InitializeComponent();
             this.Suspending += OnSuspending;
         }
 
 		/// <summary>
+		/// Initializes the logging.
+		/// </summary>
+		private void InitializeLogging()
+		{
+			// Configure logger
+			var loggerConfiguration = new LoggerConfiguration();
+			var loggerInstance = loggerConfiguration.CreateLogger();
+
+			// Assign logger 
+			this.logger = loggerInstance;
+		}
+
+	    /// <summary>
 		/// Initializes the tracking.
 		/// </summary>
 		private void InitializeTracking()
@@ -44,9 +62,10 @@ namespace sparkiy
 				RaygunClient.Attach("Hfj6rtvPJb46JAtPAeC+hA==");
 				Microsoft.ApplicationInsights.WindowsAppInitializer.InitializeAsync();
 			}
-			catch (Exception)
+			catch (Exception ex)
 			{
 				// Ignore, these are not needed for application to work properly.
+				this.logger.Warning(ex, "Failed to initialize Raygun or Application Insights.");
 #if DEBUG
 				throw;
 #endif
