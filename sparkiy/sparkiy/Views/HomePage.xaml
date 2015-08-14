@@ -5,9 +5,45 @@
     xmlns:local="using:sparkiy.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    xmlns:pivot="using:sparkiy.Controls.Pivot"
+	xmlns:tumblr="using:sparkiy.Connectors.Tumblr"
+	mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+        <Pivot x:Name="rootPivot" Style="{StaticResource TabsStylePivotStyle}">
+            <PivotItem>
+                <PivotItem.Header>
+                    <pivot:PivotTabHeader Label="Dashboard" Glyph="&#xE80F;" />
+                </PivotItem.Header>
+                <Hub>
+					<HubSection Header="News">
+						<DataTemplate x:DataType="local:HomePage">
+                            <ItemsControl ItemsSource="{x:Bind ViewModel.NewsItems, Mode=OneWay}">
+								<ItemsControl.ItemsPanel>
+									<ItemsPanelTemplate>
+										<WrapGrid />
+									</ItemsPanelTemplate>
+								</ItemsControl.ItemsPanel>
+								<ItemsControl.ItemTemplate>
+                                    <DataTemplate x:DataType="tumblr:IFeedItem">
+										<!--<StackPanel Orientation="Vertical">
+                                            <TextBlock Text="{x:Bind Title, Mode=OneWay}" />
+											<TextBlock Text="{x:Bind Content, Mode=OneWay}" />
+                                        </StackPanel>-->
+										<TextBlock>Hello</TextBlock>
+                                    </DataTemplate>
+								</ItemsControl.ItemTemplate>
+							</ItemsControl>
+						</DataTemplate>
+					</HubSection>
+				</Hub>
+            </PivotItem>
+            <PivotItem>
+                <PivotItem.Header>
+                    <pivot:PivotTabHeader Label="Favorites" Glyph="&#xE815;" />
+                </PivotItem.Header>
+				<TextBlock>Item 2</TextBlock>
+            </PivotItem>
+        </Pivot>
     </Grid>
 </Page>

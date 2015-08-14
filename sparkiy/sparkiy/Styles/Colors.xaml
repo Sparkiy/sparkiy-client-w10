@@ -23,7 +23,7 @@
             <Color x:Key="TitleBarButtonForegroundInactiveColor">#FFFFFFFF</Color>
 
             <!-- Brushes -->
-			<SolidColorBrush x:Key="AccentBrush" Color="{StaticResource AccentColor}" />
+            <SolidColorBrush x:Key="AccentBrush" Color="{ThemeResource AccentColor}" />
 			
             <!-- Override system accent color -->
             <Color x:Key="SystemAccentColor">#2E9DC8</Color>
