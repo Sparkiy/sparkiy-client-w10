@@ -15,7 +15,7 @@
                 <PivotItem.Header>
                     <pivot:PivotTabHeader Label="Dashboard" Glyph="&#xE80F;" />
                 </PivotItem.Header>
-                <Hub>
+                <Hub DataContext="{x:Bind}">
 					<HubSection Header="News">
 						<DataTemplate x:DataType="local:HomePage">
                             <ItemsControl ItemsSource="{x:Bind ViewModel.NewsItems, Mode=OneWay}">
@@ -26,11 +26,10 @@
 								</ItemsControl.ItemsPanel>
 								<ItemsControl.ItemTemplate>
                                     <DataTemplate x:DataType="tumblr:IFeedItem">
-										<!--<StackPanel Orientation="Vertical">
+                                        <StackPanel Orientation="Vertical">
                                             <TextBlock Text="{x:Bind Title, Mode=OneWay}" />
-											<TextBlock Text="{x:Bind Content, Mode=OneWay}" />
-                                        </StackPanel>-->
-										<TextBlock>Hello</TextBlock>
+                                            <TextBlock Text="{x:Bind Content, Mode=OneWay}" />
+                                        </StackPanel>
                                     </DataTemplate>
 								</ItemsControl.ItemTemplate>
 							</ItemsControl>
