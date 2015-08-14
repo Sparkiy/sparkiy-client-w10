@@ -3,6 +3,17 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:sparkiy"
+    xmlns:styles="using:sparkiy.Styles"
     RequestedTheme="Light">
 
+	<Application.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="/Styles/Colors.xaml" />
+				<styles:PivotStyles />
+				<!--<ResourceDictionary Source="/Styles/PivotStyles.xaml" />-->
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+    </Application.Resources>
+	
 </Application>

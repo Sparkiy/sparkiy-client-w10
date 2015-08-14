@@ -14,8 +14,15 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using GalaSoft.MvvmLight.Threading;
+using Microsoft.Practices.Unity;
 using Mindscape.Raygun4Net;
+using sparkiy.DI;
+using sparkiy.Services.UI;
+using sparkiy.ViewModels;
+using sparkiy.Views;
 using Serilog;
+using InjectionConstructor = Microsoft.Practices.Unity.InjectionConstructor;
 
 namespace sparkiy
 {
@@ -35,11 +42,30 @@ namespace sparkiy
         {
 	        this.InitializeLogging();
 			this.InitializeTracking();
-	        this.InitializeComponent();
+			this.InitializeContainer();
+			this.InitializeComponent();
             this.Suspending += OnSuspending;
         }
 
 		/// <summary>
+		/// Initializes the container.
+		/// </summary>
+		private void InitializeContainer()
+	    {
+			// Initialize the container
+			Container.Initialize();
+
+			// Register logger
+			Container.Instance.RegisterInstance(this.logger);
+
+			// Register services
+			Container.Instance.RegisterType<ITitleBarService, TitleBarService>();
+			
+			// Register view models
+			Container.Instance.RegisterType<IHomeViewModel, HomeViewModel>();
+		}
+
+	    /// <summary>
 		/// Initializes the logging.
 		/// </summary>
 		private void InitializeLogging()
@@ -79,9 +105,11 @@ namespace sparkiy
         /// <param name="e">Details about the launch request and process.</param>
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
+			// Initialize dispatcher
+			DispatcherHelper.Initialize();
 
 #if DEBUG
-            if (System.Diagnostics.Debugger.IsAttached)
+			if (System.Diagnostics.Debugger.IsAttached)
             {
                 //this.DebugSettings.EnableFrameRateCounter = true;
             }
@@ -112,7 +140,7 @@ namespace sparkiy
                 // When the navigation stack isn't restored navigate to the first page,
                 // configuring the new page by passing required information as a navigation
                 // parameter
-                rootFrame.Navigate(typeof(MainPage), e.Arguments);
+                rootFrame.Navigate(typeof(HomePage), e.Arguments);
             }
             // Ensure the current window is active
             Window.Current.Activate();
