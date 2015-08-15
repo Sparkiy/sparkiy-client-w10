@@ -8,11 +8,6 @@
 
   clone_folder: c:\repo
   
-  install: 
-    - rd /s /q C:\Tools\nuget 
-    - md C:\Tools\nuget 
-    - ps: (New-Object Net.WebClient).DownloadFile('http://dist.nuget.org/win-x86-commandline/v3.1.0-beta/nuget.exe', 'C:\Tools\nuget\nuget.exe') 
-  
   before_build:
     - SET PATH=C:\Program Files (x86)\MSBuild\14.0\Bin;%PATH%
     - nuget restore sparkiy\sparkiy.sln
