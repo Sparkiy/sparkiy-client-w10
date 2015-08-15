@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Text;
+using System.Threading.Tasks;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
@@ -17,6 +20,8 @@ using Windows.UI.Xaml.Navigation;
 using GalaSoft.MvvmLight.Threading;
 using Microsoft.Practices.Unity;
 using Mindscape.Raygun4Net;
+using sparkiy.Connectors.Discourse;
+using sparkiy.Connectors.Tumblr;
 using sparkiy.DI;
 using sparkiy.Services.UI;
 using sparkiy.ViewModels;
@@ -26,6 +31,78 @@ using InjectionConstructor = Microsoft.Practices.Unity.InjectionConstructor;
 
 namespace sparkiy
 {
+	public class DebugTextWriter : TextWriter
+	{
+		/// <summary>
+		/// Writes a character to the text string or stream.
+		/// </summary>
+		/// <param name="value">The character to write to the text stream.</param>
+		/// <exception cref="System.NotImplementedException"></exception>
+		public override void Write(char value)
+		{
+			Debug.Write(value);
+		}
+
+		public override void Flush()
+		{
+		}
+
+		public override async Task FlushAsync()
+		{
+		}
+
+		public override void Write(char[] buffer)
+		{
+			Debug.Write(buffer);
+        }
+
+		public override void Write(bool value)
+		{
+			Debug.Write(value);
+		}
+
+		public override void Write(char[] buffer, int index, int count)
+		{
+			Debug.Write(buffer.Skip(index).Take(count));
+		}
+
+		public override void Write(string value)
+		{
+			Debug.Write(value);
+		}
+
+		public override void Write(object value)
+		{
+			Debug.Write(value);
+		}
+
+		public override void Write(string format, params object[] arg)
+		{
+			Debug.Write(string.Format(this.FormatProvider, format, arg));
+		}
+
+		public override void WriteLine()
+		{
+			Debug.WriteLine(string.Empty);
+		}
+
+		public override void WriteLine(string value)
+		{
+			Debug.WriteLine(value);
+		}
+
+		public override void WriteLine(object value)
+		{
+			Debug.WriteLine(value);
+		}
+
+
+		/// <summary>
+		/// When overridden in a derived class, returns the character encoding in which the output is written.
+		/// </summary>
+		public override Encoding Encoding { get; }
+	}
+
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
     /// </summary>
@@ -60,6 +137,8 @@ namespace sparkiy
 
 			// Register services
 			Container.Instance.RegisterType<ITitleBarService, TitleBarService>();
+			Container.Instance.RegisterType<ITumblrNewsService, TumblrNewsService>();
+			Container.Instance.RegisterType<IDiscourseService, DiscourseService>();
 			
 			// Register view models
 			Container.Instance.RegisterType<IHomeViewModel, HomeViewModel>();
@@ -69,9 +148,13 @@ namespace sparkiy
 		/// Initializes the logging.
 		/// </summary>
 		private void InitializeLogging()
-		{
+	    {
 			// Configure logger
-			var loggerConfiguration = new LoggerConfiguration();
+		    var loggerConfiguration = new LoggerConfiguration()
+#if DEBUG
+				.WriteTo.TextWriter(new DebugTextWriter())
+#endif
+				;
 			var loggerInstance = loggerConfiguration.CreateLogger();
 
 			// Assign logger 

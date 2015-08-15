@@ -5,25 +5,23 @@ using System.Threading.Tasks;
 using Windows.Web.Syndication;
 using Serilog;
 
-namespace sparkiy.Connectors.Tumblr
+namespace sparkiy.Connectors.Discourse
 {
 	/// <summary>
-	/// Tumblr news service.
+	/// Discourse service.
 	/// </summary>
-	public sealed class TumblrNewsService : ITumblrNewsService
+	public sealed class DiscourseService : IDiscourseService
 	{
 		private readonly ILogger logger;
-		private readonly Uri newsUrl = new Uri("http://blog.sparkiy.com/rss");
+		private readonly Uri newsUrl = new Uri("http://talk.sparkiy.com/latest.rss");
 
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="TumblrNewsService"/> class.
+		/// Initializes a new instance of the <see cref="DiscourseService"/> class.
 		/// </summary>
 		/// <param name="logger">The logger.</param>
-		/// <exception cref="System.ArgumentNullException">
-		/// logger
-		/// </exception>
-		public TumblrNewsService(ILogger logger)
+		/// <exception cref="System.ArgumentNullException"></exception>
+		public DiscourseService(ILogger logger)
 		{
 			if (logger == null) throw new ArgumentNullException(nameof(logger));
 
@@ -35,7 +33,7 @@ namespace sparkiy.Connectors.Tumblr
 		/// Gets the news feed items.
 		/// </summary>
 		/// <returns>Returns collection of feed items.</returns>
-		public async Task<IEnumerable<INewsFeedItem>> GetNewsAsync()
+		public async Task<IEnumerable<IDiscourseFeedItem>> GetLatestDiscussionsAsync()
 		{
 			try
 			{
@@ -46,9 +44,9 @@ namespace sparkiy.Connectors.Tumblr
 				var feed = await client.RetrieveFeedAsync(this.newsUrl);
 
 				// Construct feed collection
-				var feedData = new List<INewsFeedItem>(
+				var feedData = new List<IDiscourseFeedItem>(
 					feed.Items.Select(item =>
-						new NewsFeedItem
+						new DiscourseFeedItem
 						{
 							Content = item.Summary?.Text ?? string.Empty,
 							Link = item.Links[0]?.Uri,
@@ -60,8 +58,8 @@ namespace sparkiy.Connectors.Tumblr
 			}
 			catch (Exception ex)
 			{
-				this.logger.Error(ex, "Failed to retrieve Tumblr news feed.");
-				return new List<INewsFeedItem>();
+				this.logger.Error(ex, "Failed to retrieve Discourse latest feed.");
+				return new List<IDiscourseFeedItem>();
 			}
 		}
 	}
