@@ -10,17 +10,22 @@
 			<!-- Colors -->
             <Color x:Key="AccentColor">#2E9DC8</Color>
 			
+			<!-- Header menu colors -->
+            <Color x:Key="HeaderMenuBackgroundColor">#2E9DC8</Color>
+			
 			<!-- Title bar colors -->
             <Color x:Key="TitleBarAccentColor">#2E9DC8</Color>
+            <Color x:Key="TitleBarBackgroundInactiveColor">#EFEFEF</Color>
             <Color x:Key="TitleBarForegroundColor">#FFFFFF</Color>
-            <Color x:Key="TitleBarButtonBackgroundColor">#2E9DC8</Color>
-            <Color x:Key="TitleBarButtonBackgroundHoverColor">#6cbad8</Color>
-            <Color x:Key="TitleBarButtonBackgroundPressedColor">#abd7e9</Color>
-            <Color x:Key="TitleBarButtonBackgroundInactiveColor">#2E9DC8</Color>
+            <Color x:Key="TitleBarForegroundInactiveColor">#555555</Color>
+            <Color x:Key="TitleBarButtonBackgroundColor">#002E9DC8</Color>
+            <Color x:Key="TitleBarButtonBackgroundHoverColor">#006cbad8</Color>
+            <Color x:Key="TitleBarButtonBackgroundPressedColor">#00abd7e9</Color>
+            <Color x:Key="TitleBarButtonBackgroundInactiveColor">#00EFEFEF</Color>
             <Color x:Key="TitleBarButtonForegroundColor">#FFFFFFFF</Color>
             <Color x:Key="TitleBarButtonForegroundHoverColor">#FFFFFFFF</Color>
             <Color x:Key="TitleBarButtonForegroundPressedColor">#FFFFFFFF</Color>
-            <Color x:Key="TitleBarButtonForegroundInactiveColor">#FFFFFFFF</Color>
+            <Color x:Key="TitleBarButtonForegroundInactiveColor">#FF555555</Color>
 
             <!-- Brushes -->
             <SolidColorBrush x:Key="AccentBrush" Color="{ThemeResource AccentColor}" />
