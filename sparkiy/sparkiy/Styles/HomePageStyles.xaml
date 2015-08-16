@@ -8,7 +8,7 @@
 
 	<!-- Feed item data template -->
     <DataTemplate x:DataType="feed:FeedItem" x:Key="FeedItemDataTemplate">
-        <StackPanel Orientation="Vertical" Width="292" Margin="0 0 0 12">
+        <StackPanel Orientation="Vertical" Margin="0 0 0 12">
             <HyperlinkButton NavigateUri="{x:Bind Link}">
                 <TextBlock Text="{x:Bind Title}" TextTrimming="WordEllipsis" />
             </HyperlinkButton>
