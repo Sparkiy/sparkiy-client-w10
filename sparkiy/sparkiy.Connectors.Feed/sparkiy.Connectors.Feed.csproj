@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{648D2D9D-5986-4057-9ACF-3AAC01C6AD62}</ProjectGuid>
+    <ProjectGuid>{997D9B53-5CBB-4729-9898-C83B4A2F8324}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>sparkiy.Connectors.Tumblr</RootNamespace>
-    <AssemblyName>sparkiy.Connectors.Tumblr</AssemblyName>
+    <RootNamespace>sparkiy.Connectors.Feed</RootNamespace>
+    <AssemblyName>sparkiy.Connectors.Feed</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion>10.0.10240.0</TargetPlatformVersion>
@@ -113,18 +113,12 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="INewsFeedItem.cs" />
-    <Compile Include="ITumblrNewsService.cs" />
-    <Compile Include="NewsFeedItem.cs" />
+    <Compile Include="IFeedItem.cs" />
+    <Compile Include="FeedItem.cs" />
+    <Compile Include="IFeedItemExtended.cs" />
+    <Compile Include="IFeedItemSourceData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TumblrNewsService.cs" />
-    <Content Include="Properties\sparkiy.Connectors.Tumblr.rd.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\sparkiy.Connectors.Feed\sparkiy.Connectors.Feed.csproj">
-      <Project>{997D9B53-5CBB-4729-9898-C83B4A2F8324}</Project>
-      <Name>sparkiy.Connectors.Feed</Name>
-    </ProjectReference>
+    <Content Include="Properties\sparkiy.Connectors.Feed.rd.xml" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

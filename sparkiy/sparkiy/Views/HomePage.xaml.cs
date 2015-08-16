@@ -21,6 +21,7 @@ namespace sparkiy.Views
 			this.Loaded += async (sender, args) => await this.ViewModel.LoadedAsync();
 
 			this.InitializeComponent();
+			this.DataContext = this;
 		}
 
 		/// <summary>
