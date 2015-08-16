@@ -28,7 +28,7 @@
 
                 <RichTextBlockOverflow x:Name="PART_RichTextBlockOverflowLine2" MaxLines="1" />
 
-                <TextBlock Text="{x:Bind FormatedDate}" Margin="12 0 0 0" Foreground="#AAA" Grid.Column="1" />
+                <TextBlock Text="{x:Bind FormatedDate}" Margin="12 0 0 0" Foreground="{ThemeResource SystemControlForegroundBaseMediumLowBrush}" Grid.Column="1" />
             </Grid>
         </StackPanel>
     </DataTemplate>
@@ -83,13 +83,13 @@
                 <TextBlock Text="Loading latest news..." 
 						   VerticalAlignment="Center" 
 						   Margin="12 0 0 0" 
-						   Foreground="#333" />
+						   Foreground="{ThemeResource SystemControlForegroundBaseMediumBrush}" />
             </StackPanel>
             <TextBlock Text="No news available." 
 					   Visibility="{Binding ViewModel.AreNewsItemsEmpty, Converter={StaticResource BooleanToVisibilityConverter}}"
 					   Margin="4"
 					   FontWeight="Light"
-					   Foreground="#AAA"
+					   Foreground="{ThemeResource SystemControlForegroundBaseMediumLowBrush}"
 					   VerticalAlignment="Center"
 					   HorizontalAlignment="Center" />
         </Grid>
@@ -121,11 +121,11 @@
                 <TextBlock Text="Loading latest news..." 
 						   VerticalAlignment="Center" 
 						   Margin="12 0 0 0" 
-						   Foreground="#333" />
+						   Foreground="{ThemeResource SystemControlForegroundBaseMediumBrush}" />
             </StackPanel>
 			<TextBlock Text="No discussions available." 
 					   Visibility="{Binding ViewModel.AreDiscussionsItemsEmpty, Converter={StaticResource BooleanToVisibilityConverter}}"
-					   Foreground="#AAA"
+					   Foreground="{ThemeResource SystemControlForegroundBaseMediumLowBrush}"
 					   Margin="4"
 					   FontWeight="Light"
 					   VerticalAlignment="Center"
