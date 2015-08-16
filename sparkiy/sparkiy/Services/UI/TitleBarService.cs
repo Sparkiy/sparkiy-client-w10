@@ -22,12 +22,14 @@ namespace sparkiy.Services.UI
 	public sealed class TitleBarService : ITitleBarService
 	{
 		private const string TitleBarAccentColorKey = "TitleBarAccentColor";
+		private const string TitleBarBackgroundInactiveColorKey = "TitleBarBackgroundInactiveColor";
 		private const string TitleBarForegroundColorKey = "TitleBarForegroundColor";
-		private const string TitleBarButtonBackgroundColorKey = "TitleBarButtonBackgroundInactiveColor";
+		private const string TitleBarForegroundInactiveColorKey = "TitleBarForegroundInactiveColor";
+		private const string TitleBarButtonBackgroundColorKey = "TitleBarButtonBackgroundColor";
 		private const string TitleBarButtonBackgroundHoverColorKey = "TitleBarButtonBackgroundHoverColor";
 		private const string TitleBarButtonBackgroundPressedColorKey = "TitleBarButtonBackgroundPressedColor";
 		private const string TitleBarButtonBackgroundInactiveColorKey = "TitleBarButtonBackgroundInactiveColor";
-		private const string TitleBarButtonForegroundColorKey = "TitleBarButtonForegroundInactiveColor";
+		private const string TitleBarButtonForegroundColorKey = "TitleBarButtonForegroundColor";
 		private const string TitleBarButtonForegroundHoverColorKey = "TitleBarButtonForegroundHoverColor";
 		private const string TitleBarButtonForegroundPressedColorKey = "TitleBarButtonForegroundPressedColor";
 		private const string TitleBarButtonForegroundInactiveColorKey = "TitleBarButtonForegroundInactiveColor";
@@ -42,7 +44,9 @@ namespace sparkiy.Services.UI
 
 			// Colors
 			Color titleBarAccentColor;
+			Color titleBarBackgroundInactiveColor;
 			Color titleBarForegroundColor;
+			Color titleBarForegroundInactiveColor;
 			Color titleBarButtonBackgroundColor;
 			Color titleBarButtonBackgroundHoverColor;
 			Color titleBarButtonBackgroundPressedColor;
@@ -54,7 +58,9 @@ namespace sparkiy.Services.UI
 
 			// Retrieve colors
 			Application.Current.Resources.TryGetValue(TitleBarAccentColorKey, out titleBarAccentColor);
+			Application.Current.Resources.TryGetValue(TitleBarBackgroundInactiveColorKey, out titleBarBackgroundInactiveColor);
 			Application.Current.Resources.TryGetValue(TitleBarForegroundColorKey, out titleBarForegroundColor);
+			Application.Current.Resources.TryGetValue(TitleBarForegroundInactiveColorKey, out titleBarForegroundInactiveColor);
 			Application.Current.Resources.TryGetValue(TitleBarButtonBackgroundColorKey, out titleBarButtonBackgroundColor);
 			Application.Current.Resources.TryGetValue(TitleBarButtonBackgroundHoverColorKey, out titleBarButtonBackgroundHoverColor);
 			Application.Current.Resources.TryGetValue(TitleBarButtonBackgroundPressedColorKey, out titleBarButtonBackgroundPressedColor);
@@ -67,8 +73,10 @@ namespace sparkiy.Services.UI
 			// Set values
 			titleBar.BackgroundColor = titleBarAccentColor;
 			titleBar.ForegroundColor = titleBarForegroundColor;
+			titleBar.InactiveForegroundColor = titleBarForegroundInactiveColor;
+			titleBar.InactiveBackgroundColor = titleBarBackgroundInactiveColor;
 			titleBar.ButtonBackgroundColor = titleBarButtonBackgroundColor;
-            titleBar.ButtonHoverBackgroundColor = titleBarButtonBackgroundHoverColor;
+			titleBar.ButtonHoverBackgroundColor = titleBarButtonBackgroundHoverColor;
 			titleBar.ButtonPressedBackgroundColor = titleBarButtonBackgroundPressedColor;
 			titleBar.ButtonInactiveBackgroundColor = titleBarButtonBackgroundInactiveColor;
 			titleBar.ButtonForegroundColor = titleBarButtonForegroundColor;

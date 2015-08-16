@@ -20,7 +20,7 @@
                                 <Setter Property="FontFamily" Value="Segoe UI" />
                                 <Setter Property="FontWeight" Value="SemiBold" />
                                 <Setter Property="FontSize" Value="15" />
-								<Setter Property="Template">
+                                <Setter Property="Template">
                                     <Setter.Value>
                                         <ControlTemplate TargetType="ContentControl">
                                             <ContentPresenter
@@ -44,7 +44,7 @@
                                 display custom 'selected' visuals -->
                             <Style TargetType="PivotHeaderItem">
                                 <Setter Property="Padding" Value="0" />
-								<Setter Property="RequestedTheme" Value="Dark" />
+                                <Setter Property="RequestedTheme" Value="Dark" />
                             </Style>
                         </Grid.Resources>
                         <VisualStateManager.VisualStateGroups>
@@ -114,15 +114,15 @@
                                 <ResourceDictionary>
                                     <ResourceDictionary.ThemeDictionaries>
                                         <ResourceDictionary x:Key="Default">
-                                            <SolidColorBrush x:Key="SystemControlPageBackgroundChromeMediumBrush" Color="{ThemeResource SystemChromeMediumColor}" />
+                                            <SolidColorBrush x:Key="SystemControlPageBackgroundChromeMediumBrush" Color="{ThemeResource HeaderMenuBackgroundColor}" />
                                             <SolidColorBrush x:Key="SystemControlForegroundChromeMediumBrush" Color="{ThemeResource SystemChromeMediumColor}" />
                                         </ResourceDictionary>
                                         <ResourceDictionary x:Key="Light">
-                                            <SolidColorBrush x:Key="SystemControlPageBackgroundChromeMediumBrush" Color="{ThemeResource SystemChromeMediumColor}" />
+                                            <SolidColorBrush x:Key="SystemControlPageBackgroundChromeMediumBrush" Color="{ThemeResource HeaderMenuBackgroundColor}" />
                                             <SolidColorBrush x:Key="SystemControlForegroundChromeMediumBrush" Color="{ThemeResource SystemChromeMediumColor}" />
                                         </ResourceDictionary>
                                         <ResourceDictionary x:Key="HighContrast">
-                                            <SolidColorBrush x:Key="SystemControlPageBackgroundChromeMediumBrush" Color="{ThemeResource SystemColorWindowColor}" />
+                                            <SolidColorBrush x:Key="SystemControlPageBackgroundChromeMediumBrush" Color="{ThemeResource HeaderMenuBackgroundColor}" />
                                             <SolidColorBrush x:Key="SystemControlForegroundChromeMediumBrush" Color="{ThemeResource SystemColorButtonTextColor}" />
                                         </ResourceDictionary>
                                     </ResourceDictionary.ThemeDictionaries>
@@ -248,7 +248,7 @@
                                         <!--  This border is used as a backplate for the header area  -->
                                         <Border
                                                 Grid.ColumnSpan="3"
-                                                Background="{ThemeResource AccentBrush}"
+                                                Background="{ThemeResource SystemControlPageBackgroundChromeMediumBrush}"
                                                 BorderBrush="{ThemeResource SystemControlForegroundChromeMediumBrush}"
                                                 BorderThickness="0,0,0,1" />
 

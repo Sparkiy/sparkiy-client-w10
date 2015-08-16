@@ -1,4 +1,8 @@
-﻿using Windows.UI.Xaml.Controls;
+﻿using Windows.UI;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Media;
+using sparkiy.Extensions;
 using sparkiy.ViewModels;
 using sparkiy.ViewModels.Utilities;
 
@@ -21,8 +25,9 @@ namespace sparkiy.Views
 			this.Loaded += async (sender, args) => await this.ViewModel.LoadedAsync();
 
 			this.InitializeComponent();
+			this.DataContext = this;
 		}
-
+		
 		/// <summary>
 		/// Gets the view model.
 		/// </summary>
