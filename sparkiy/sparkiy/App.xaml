@@ -10,6 +10,7 @@
 	<Application.Resources>
 		<ResourceDictionary>
             <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+			<converters:StringToVisibilityConverter x:Key="StringToVisibilityConverter" />
 
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/Styles/Colors.xaml" />

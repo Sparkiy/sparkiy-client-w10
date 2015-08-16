@@ -15,7 +15,8 @@
             <RichTextBlock IsTextSelectionEnabled="False" 
 						   MaxLines="1" 
 						   TextTrimming="WordEllipsis" 
-						   OverflowContentTarget="{Binding ElementName=PART_RichTextBlockOverflowLine2}">
+						   OverflowContentTarget="{Binding ElementName=PART_RichTextBlockOverflowLine2}"
+						   Visibility="{x:Bind Text, Converter={StaticResource StringToVisibilityConverter}}">
                 <Paragraph>
                     <Run Text="{x:Bind Text}" />
                 </Paragraph>
