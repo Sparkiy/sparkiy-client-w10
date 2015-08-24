@@ -15,23 +15,78 @@
                 <PivotItem.Header>
                     <pivot:PivotTabHeader Label="Dashboard" Glyph="&#xE80F;" />
                 </PivotItem.Header>
-                <Hub DataContext="{x:Bind}">
-                    <Hub.Transitions>
-                        <TransitionCollection>
-                            <ContentThemeTransition />
-                        </TransitionCollection>
-                    </Hub.Transitions>
-                    <HubSection Header="Start" Width="320" ContentTemplate="{StaticResource StartDataTemplate}" />
-                    <HubSection Header="News" Width="420" ContentTemplate="{StaticResource LatestNewsDataTemplate}" />
-                    <HubSection Header="Talk" Width="420" ContentTemplate="{StaticResource LatestDiscussionsDataTemplate}" />
-                </Hub>
+
+                <RelativePanel>
+                    <Grid x:Name="StartGrid" Width="320">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Text="Start" Style="{StaticResource SectionHeaderTextBlockStyle}" />
+                        <ContentPresenter ContentTemplate="{StaticResource StartDataTemplate}" Grid.Row="1" />
+                    </Grid>
+                    <Grid x:Name="LatestNewsGrid" Width="420">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Text="News" Style="{StaticResource SectionHeaderTextBlockStyle}" />
+                        <ContentPresenter ContentTemplate="{StaticResource LatestNewsDataTemplate}" Grid.Row="1" />
+                    </Grid>
+                    <Grid x:Name="LatestDiscussionsGrid" Width="420">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Text="Discussions" Style="{StaticResource SectionHeaderTextBlockStyle}" />
+                        <ContentPresenter ContentTemplate="{StaticResource LatestDiscussionsDataTemplate}" Grid.Row="1" />
+                    </Grid>
+                </RelativePanel>
+
             </PivotItem>
             <PivotItem>
                 <PivotItem.Header>
                     <pivot:PivotTabHeader Label="Projects" Glyph="&#xE8B7;" />
                 </PivotItem.Header>
-				<TextBlock>My Projects</TextBlock>
+                <TextBlock>My Projects</TextBlock>
             </PivotItem>
         </Pivot>
+
+        <!-- Visual states -->
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="ResponsiveStates">
+                <VisualState x:Name="WideScreen">
+					<VisualState.StateTriggers>
+						<AdaptiveTrigger MinWindowWidth="1160" />
+					</VisualState.StateTriggers>
+					<VisualState.Setters>
+                        <Setter Target="LatestDiscussionsGrid.(RelativePanel.RightOf)" Value="LatestNewsGrid" />
+                        <Setter Target="LatestNewsGrid.(RelativePanel.RightOf)" Value="StartGrid" />
+                    </VisualState.Setters>
+				</VisualState>
+                <VisualState x:Name="MediumScreen">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="740" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="LatestNewsGrid.(RelativePanel.RightOf)" Value="StartGrid" />
+                        <Setter Target="LatestDiscussionsGrid.(RelativePanel.Below)" Value="LatestNewsGrid" />
+                        <Setter Target="LatestDiscussionsGrid.(RelativePanel.RightOf)" Value="StartGrid" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="SmallScreen">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="420" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="LatestNewsGrid.(RelativePanel.Below)" Value="StartGrid" />
+                        <Setter Target="LatestDiscussionsGrid.(RelativePanel.Below)" Value="LatestNewsGrid" />
+                    </VisualState.Setters>
+                </VisualState>
+			</VisualStateGroup>
+		</VisualStateManager.VisualStateGroups>
     </Grid>
 </Page>
