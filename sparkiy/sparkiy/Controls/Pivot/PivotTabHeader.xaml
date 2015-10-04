@@ -10,12 +10,12 @@
     <StackPanel >
         <FontIcon
                             HorizontalAlignment="Center"
-                            Margin="0,12,0,0"
-                            Glyph="{Binding Glyph}"
+                            Margin="0 12 0 0"
+                            Glyph="{x:Bind Glyph}"
                             FontSize="16" />
         <TextBlock
                             FontFamily="Segoe UI"
-                            Text="{Binding Label}"
+                            Text="{x:Bind Label}"
                             Style="{StaticResource CaptionTextBlockStyle}"
                             LineStackingStrategy="BlockLineHeight"
                             LineHeight="14"

@@ -30,7 +30,7 @@ namespace sparkiy.Controls.Pivot
 		/// <summary>
 		/// The glyph property
 		/// </summary>
-		public static readonly DependencyProperty GlyphProperty = DependencyProperty.Register("Glyph", typeof(string), typeof(PivotTabHeader), null);
+		public static readonly DependencyProperty GlyphProperty = DependencyProperty.Register("Glyph", typeof(string), typeof(PivotTabHeader), new PropertyMetadata(string.Empty));
 
 		/// <summary>
 		/// Gets or sets the label.
@@ -47,6 +47,6 @@ namespace sparkiy.Controls.Pivot
 		/// <summary>
 		/// The label property
 		/// </summary>
-		public static readonly DependencyProperty LabelProperty = DependencyProperty.Register("Label", typeof(string), typeof(PivotTabHeader), null);
+		public static readonly DependencyProperty LabelProperty = DependencyProperty.Register("Label", typeof(string), typeof(PivotTabHeader), new PropertyMetadata(string.Empty));
 	}
 }
