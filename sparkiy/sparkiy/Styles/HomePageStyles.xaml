@@ -6,6 +6,12 @@
     xmlns:feed="using:sparkiy.Connectors.Feed"
     xmlns:views="using:sparkiy.Views">
 
+	<!-- Section header style -->
+	<Style x:Key="SectionHeaderTextBlockStyle" TargetType="TextBlock">
+		<Setter Property="FontSize" Value="20" />
+		<Setter Property="Margin" Value="0 16 8 12" />
+	</Style>
+	
 	<!-- Feed item data template -->
     <DataTemplate x:DataType="feed:FeedItem" x:Key="FeedItemDataTemplate">
         <StackPanel Orientation="Vertical" Margin="0 0 0 12">
@@ -36,7 +42,7 @@
 
 	<!-- Start data template -->
     <DataTemplate x:DataType="views:HomePage" x:Key="StartDataTemplate">
-        <Grid>
+        <Grid Margin="0 0 28 12">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
@@ -60,7 +66,7 @@
 
     <!-- Latest news data template -->
     <DataTemplate x:DataType="views:HomePage" x:Key="LatestNewsDataTemplate">
-        <Grid>
+        <Grid Margin="0 0 28 12">
             <ItemsControl ItemsSource="{x:Bind ViewModel.NewsItems, Mode=OneWay}"
 						  ItemTemplate="{StaticResource FeedItemDataTemplate}">
                 <ItemsControl.ItemContainerTransitions>
@@ -98,7 +104,7 @@
 
     <!-- Latest discussions data template -->
     <DataTemplate x:DataType="views:HomePage" x:Key="LatestDiscussionsDataTemplate">
-        <Grid>
+        <Grid Margin="0 0 28 12">
             <ItemsControl ItemsSource="{x:Bind ViewModel.DiscussionItems, Mode=OneWay}"
 						  ItemTemplate="{StaticResource FeedItemDataTemplate}">
                 <ItemsControl.ItemContainerTransitions>

@@ -20,6 +20,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sparkiy.Connectors.Feed", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sparkiy.Connectors.Discourse", "sparkiy.Connectors.Discourse\sparkiy.Connectors.Discourse.csproj", "{44BDE5EE-5BF9-45AA-B1EE-6187C76A9FC6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sparkiy.Connectors.IoT.Windows", "sparkiy.Connectors.IoT.Windows\sparkiy.Connectors.IoT.Windows.csproj", "{9E04B546-5D27-48C3-BE1B-B28F68C1AC76}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -100,6 +102,22 @@ Global
 		{44BDE5EE-5BF9-45AA-B1EE-6187C76A9FC6}.Release|x64.Build.0 = Release|x64
 		{44BDE5EE-5BF9-45AA-B1EE-6187C76A9FC6}.Release|x86.ActiveCfg = Release|x86
 		{44BDE5EE-5BF9-45AA-B1EE-6187C76A9FC6}.Release|x86.Build.0 = Release|x86
+		{9E04B546-5D27-48C3-BE1B-B28F68C1AC76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E04B546-5D27-48C3-BE1B-B28F68C1AC76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E04B546-5D27-48C3-BE1B-B28F68C1AC76}.Debug|ARM.ActiveCfg = Debug|ARM
+		{9E04B546-5D27-48C3-BE1B-B28F68C1AC76}.Debug|ARM.Build.0 = Debug|ARM
+		{9E04B546-5D27-48C3-BE1B-B28F68C1AC76}.Debug|x64.ActiveCfg = Debug|x64
+		{9E04B546-5D27-48C3-BE1B-B28F68C1AC76}.Debug|x64.Build.0 = Debug|x64
+		{9E04B546-5D27-48C3-BE1B-B28F68C1AC76}.Debug|x86.ActiveCfg = Debug|x86
+		{9E04B546-5D27-48C3-BE1B-B28F68C1AC76}.Debug|x86.Build.0 = Debug|x86
+		{9E04B546-5D27-48C3-BE1B-B28F68C1AC76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E04B546-5D27-48C3-BE1B-B28F68C1AC76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E04B546-5D27-48C3-BE1B-B28F68C1AC76}.Release|ARM.ActiveCfg = Release|ARM
+		{9E04B546-5D27-48C3-BE1B-B28F68C1AC76}.Release|ARM.Build.0 = Release|ARM
+		{9E04B546-5D27-48C3-BE1B-B28F68C1AC76}.Release|x64.ActiveCfg = Release|x64
+		{9E04B546-5D27-48C3-BE1B-B28F68C1AC76}.Release|x64.Build.0 = Release|x64
+		{9E04B546-5D27-48C3-BE1B-B28F68C1AC76}.Release|x86.ActiveCfg = Release|x86
+		{9E04B546-5D27-48C3-BE1B-B28F68C1AC76}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -108,5 +126,6 @@ Global
 		{648D2D9D-5986-4057-9ACF-3AAC01C6AD62} = {A6320A5B-4AFE-4451-A67D-D95F133FD543}
 		{997D9B53-5CBB-4729-9898-C83B4A2F8324} = {A6320A5B-4AFE-4451-A67D-D95F133FD543}
 		{44BDE5EE-5BF9-45AA-B1EE-6187C76A9FC6} = {A6320A5B-4AFE-4451-A67D-D95F133FD543}
+		{9E04B546-5D27-48C3-BE1B-B28F68C1AC76} = {A6320A5B-4AFE-4451-A67D-D95F133FD543}
 	EndGlobalSection
 EndGlobal

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Threading;
 using sparkiy.Connectors.Discourse;
+using sparkiy.Connectors.IoT.Windows;
 using sparkiy.Connectors.Tumblr;
 using sparkiy.Services.UI;
 
@@ -78,7 +79,7 @@ namespace sparkiy.ViewModels
 		// State variables
 		private bool isNewsItemsLoading;
 		private bool areNewsItemsEmpty;
-        private bool isDiscussionsItemsLoading;
+		private bool isDiscussionsItemsLoading;
 		private bool areDiscussionsItemsEmpty;
 
 
@@ -127,6 +128,9 @@ namespace sparkiy.ViewModels
 
 			// Wait for all tasks to finish
 			await Task.WhenAll(tasks.Select(t => t()));
+
+			var api = new DeviceApi();
+			var info = await api.GetInstalledAppXPackages();
 		}
 
 		/// <summary>

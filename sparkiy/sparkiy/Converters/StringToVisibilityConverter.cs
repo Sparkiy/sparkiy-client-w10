@@ -5,36 +5,38 @@ using Windows.UI.Xaml.Data;
 namespace sparkiy.Converters
 {
 	/// <summary>
-	/// <see cref="Boolean"/> to <see cref="Visibility"/> converter.
+	/// <see cref="String"/> to <see cref="Visibility"/> converter.
+	/// Sets visibility to <see cref="Visibility.Collapsed"/> is string is empty.
 	/// </summary>
-	public sealed class BooleanToVisibilityConverter : IValueConverter
+	public sealed class StringToVisibilityConverter : IValueConverter
 	{
 		/// <summary>
-		/// Converts boolean value to visibility enum value.
+		/// Converts the specified value.
 		/// </summary>
 		/// <param name="value">The value.</param>
 		/// <param name="targetType">Type of the target.</param>
 		/// <param name="parameter">The parameter.</param>
 		/// <param name="language">The language.</param>
-		/// <returns>Returns <see cref="Visibility.Collapsed"/> if provided value is not of type <see cref="Boolean"/> or is <c>False</c>; <see cref="Visibility.Visible"/> otherwise.</returns>
+		/// <returns>Returns <see cref="Visibility.Collapsed"/> if given value is an empty string or null; <see cref="Visibility.Visible"/> otherwise.</returns>
 		public object Convert(object value, Type targetType, object parameter, string language)
 		{
-			if (!(value is bool))
+			if (!(value is string))
 				return Visibility.Collapsed;
-			return (bool) value ? Visibility.Visible : Visibility.Collapsed;
+			return !string.IsNullOrWhiteSpace(value.ToString()) ? Visibility.Visible : Visibility.Collapsed;
 		}
 
 		/// <summary>
-		/// Converts visibility enum value to boolean value.
+		/// Converts the back.
 		/// </summary>
 		/// <param name="value">The value.</param>
 		/// <param name="targetType">Type of the target.</param>
 		/// <param name="parameter">The parameter.</param>
 		/// <param name="language">The language.</param>
-		/// <returns>Returns <c>False</c> if provided value is not of type <see cref="Visibility"/> or is <see cref="Visibility.Collapsed"/>; <c>True</c> otherwise.</returns>
+		/// <returns></returns>
+		/// <exception cref="System.NotSupportedException">Not supported operation.</exception>
 		public object ConvertBack(object value, Type targetType, object parameter, string language)
 		{
-			return value as Visibility? == Visibility.Visible;
+			throw new NotSupportedException();
 		}
 	}
 }
