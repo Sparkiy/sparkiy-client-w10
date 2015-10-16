@@ -191,6 +191,10 @@
       <Project>{997D9B53-5CBB-4729-9898-C83B4A2F8324}</Project>
       <Name>sparkiy.Connectors.Feed</Name>
     </ProjectReference>
+    <ProjectReference Include="..\sparkiy.Connectors.IoT.Windows\sparkiy.Connectors.IoT.Windows.csproj">
+      <Project>{9E04B546-5D27-48C3-BE1B-B28F68C1AC76}</Project>
+      <Name>sparkiy.Connectors.IoT.Windows</Name>
+    </ProjectReference>
     <ProjectReference Include="..\sparkiy.Connectors.Tumblr\sparkiy.Connectors.Tumblr.csproj">
       <Project>{648D2D9D-5986-4057-9ACF-3AAC01C6AD62}</Project>
       <Name>sparkiy.Connectors.Tumblr</Name>
