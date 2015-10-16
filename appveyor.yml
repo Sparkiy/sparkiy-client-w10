@@ -10,6 +10,7 @@
   
   before_build:
     - SET PATH=C:\Program Files (x86)\MSBuild\14.0\Bin;%PATH%
+    - git submodule update --init --recursive
     - nuget restore sparkiy\sparkiy.sln
   
   build:
