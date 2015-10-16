@@ -2,7 +2,6 @@
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
-using sparkiy.Connectors.IoT.Windows;
 using sparkiy.Extensions;
 using sparkiy.ViewModels;
 using sparkiy.ViewModels.Utilities;
