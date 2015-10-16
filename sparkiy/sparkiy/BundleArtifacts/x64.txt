@@ -1,0 +1,1 @@
+MainPackage=C:\Users\Aleksandar Toplek\Documents\GitHubVisualStudio\client-w10\sparkiy\sparkiy\bin\x64\Debug\sparkiy_2.0.0.0_x64_Debug.appx
