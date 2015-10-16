@@ -1,0 +1,3 @@
+[submodule "sparkiy/sparkiy.Connectors.WindowsIoT"]
+	path = sparkiy/sparkiy.Connectors.WindowsIoT
+	url = https://github.com/Sparkiy/sparkiy.Connectors.WindowsIoT.git

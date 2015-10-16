@@ -1,15 +1,16 @@
 ﻿{
   "dependencies": {
-    "Microsoft.ApplicationInsights": "1.0.0",
-    "Microsoft.ApplicationInsights.PersistenceChannel": "1.0.0",
+    "Microsoft.ApplicationInsights": "1.2.0",
+    "Microsoft.ApplicationInsights.PersistenceChannel": "1.2.0",
     "Microsoft.ApplicationInsights.WindowsApps": "1.1.0",
     "Microsoft.AspNet.WebApi.Client": "5.2.3",
     "Microsoft.NETCore.UniversalWindowsPlatform": "5.0.0",
-    "Mindscape.Raygun4Net": "5.1.0",
-    "MvvmLightLibs": "5.1.1",
+    "Mindscape.Raygun4Net": "5.1.1",
+    "MvvmLightLibs": "5.2.0",
     "Newtonsoft.Json": "7.0.1",
     "Portable.Ninject": "3.3.1",
-    "Serilog": "1.5.9"
+    "Serilog": "1.5.11",
+    "Unity": "4.0.1"
   },
   "frameworks": {
     "uap10.0": {}
