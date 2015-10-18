@@ -1,31 +1,32 @@
-﻿<UserControl
-	x:Class="sparkiy.Views.Devices.IoT.Windows.DeviceSetupView"
-	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-	xmlns:local="using:sparkiy.Views.Devices.IoT.Windows"
-	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-	mc:Ignorable="d"
-	d:DesignHeight="300"
-	d:DesignWidth="400">
+﻿<UserControl x:Class="sparkiy.Views.Devices.IoT.Windows.DeviceSetupView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="using:sparkiy.Views.Devices.IoT.Windows"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             d:DesignHeight="300"
+             d:DesignWidth="400"
+             mc:Ignorable="d">
 
 	<Grid>
-		<Pivot IsLocked="True">
-			<PivotItem Header="Find the deive">
-				<!--<local:DeviceSetupAutoFindDeviceView />-->
-				<local:DeviceSetupAutoFindDeviceConfirmView />
-			</PivotItem>
-			<PivotItem Header="Start">
+		<Pivot x:Name="GuideStepsContainer">
+			<PivotItem x:Name="StartStep" Header="Start">
 				<local:DeviceSetupWelcomeView />
 			</PivotItem>
-			<PivotItem Header="Customize">
-				<TextBlock>Customize</TextBlock>
+			<PivotItem x:Name="FindingDeviceStep" Header="Finding the device">
+				<local:DeviceSetupAutoFindDeviceView />
 			</PivotItem>
-			<PivotItem Header="Install">
-				<TextBlock>Prepairing your device for sparkiy...</TextBlock>
+			<PivotItem x:Name="FoundDeviceStep" Header="Found your device">
+				<local:DeviceSetupAutoFindDeviceConfirmView />
 			</PivotItem>
-			<PivotItem Header="Done">
-				<TextBlock>We're all set.</TextBlock>
+			<PivotItem x:Name="CustomizeStep" Header="Customize">
+				<local:DeviceSetupCustomizeView />
+			</PivotItem>
+			<PivotItem x:Name="InstallStep" Header="Install">
+				<local:DeviceSetupInstallationView />
+			</PivotItem>
+			<PivotItem x:Name="DoneStep" Header="Done">
+				<local:DeviceSetupDoneView />
 			</PivotItem>
 		</Pivot>
 	</Grid>

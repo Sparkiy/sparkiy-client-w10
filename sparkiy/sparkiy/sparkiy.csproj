@@ -123,7 +123,9 @@
     <Compile Include="Styles\PivotStyles.xaml.cs">
       <DependentUpon>PivotStyles.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\Devices\IoT\Windows\SetupWelcomeViewModel.cs" />
+    <Compile Include="ViewModels\Devices\IoT\Windows\DeviceSetupProgressEventArgs.cs" />
+    <Compile Include="ViewModels\Devices\IoT\Windows\DeviceSetupProgressEventHandler.cs" />
+    <Compile Include="ViewModels\Devices\IoT\Windows\DeviceSetupViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\IPageViewModel.cs" />
     <Compile Include="ViewModels\Utilities\ViewModelResolver.cs" />
@@ -133,6 +135,16 @@
     <Compile Include="Views\Devices\IoT\Windows\DeviceSetupAutoFindDeviceView.xaml.cs">
       <DependentUpon>DeviceSetupAutoFindDeviceView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Devices\IoT\Windows\DeviceSetupCustomizeView.xaml.cs">
+      <DependentUpon>DeviceSetupCustomizeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Devices\IoT\Windows\DeviceSetupDoneView.xaml.cs">
+      <DependentUpon>DeviceSetupDoneView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Devices\IoT\Windows\DeviceSetupInstallationView.xaml.cs">
+      <DependentUpon>DeviceSetupInstallationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\Devices\IoT\Windows\DeviceSetupSteps.cs" />
     <Compile Include="Views\Devices\IoT\Windows\DeviceSetupView.xaml.cs">
       <DependentUpon>DeviceSetupView.xaml</DependentUpon>
     </Compile>
@@ -151,6 +163,9 @@
     <None Include="sparkiy_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Devices\IoT\memory9.png" />
+    <Content Include="Assets\Devices\IoT\plug10.png" />
+    <Content Include="Assets\Devices\IoT\socket4.png" />
     <Content Include="Assets\Square150x150Logo.scale-100.png" />
     <Content Include="Assets\Square150x150Logo.scale-400.png" />
     <Content Include="Assets\Square44x44Logo.scale-100.png" />
@@ -198,6 +213,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Devices\IoT\Windows\DeviceSetupAutoFindDeviceView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Devices\IoT\Windows\DeviceSetupCustomizeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Devices\IoT\Windows\DeviceSetupDoneView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Devices\IoT\Windows\DeviceSetupInstallationView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

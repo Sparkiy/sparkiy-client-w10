@@ -1,8 +1,11 @@
-﻿<UserControl x:Class="sparkiy.Views.Devices.IoT.Windows.DeviceSetupWelcomeView"
+﻿<UserControl x:Class="sparkiy.Views.Devices.IoT.Windows.DeviceSetupInstallationView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="using:sparkiy.Views.Devices.IoT.Windows"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             d:DesignHeight="300"
+             d:DesignWidth="400"
              mc:Ignorable="d">
 
 	<Grid>
@@ -10,32 +13,24 @@
 			<RowDefinition Height="*" />
 			<RowDefinition Height="Auto" />
 			<RowDefinition Height="Auto" />
-			<RowDefinition Height="Auto" />
 			<RowDefinition Height="*" />
 		</Grid.RowDefinitions>
 
-		<!--  Welcome message  -->
+		<!--  Header  -->
 		<TextBlock Grid.Row="1"
 		           Margin="{ThemeResource HubSectionHeaderThemeMargin}"
 		           HorizontalAlignment="Center"
 		           VerticalAlignment="Center"
 		           FontSize="{ThemeResource HubHeaderThemeFontSize}"
 		           FontWeight="{ThemeResource HubHeaderThemeFontWeight}"
-		           Text="Let's start." />
-		<TextBlock Grid.Row="2"
-		           MaxWidth="360"
-		           HorizontalAlignment="Center"
-		           VerticalAlignment="Center"
-		           Text="This guide will help you setup your sparkiy IoT device in only three simple steps."
-		           TextAlignment="Center"
-		           TextWrapping="WrapWholeWords" />
+		           Text="Configuring your device..." />
 
-		<!--  Continue button  -->
-		<Button Grid.Row="3"
-		        Margin="0 24 0 8"
-		        HorizontalAlignment="Center"
-		        VerticalAlignment="Center"
-		        Command="{Binding ViewModel.ProgressForwardCommand}"
-		        Content="Continue" />
+		<!--  Progress indicator  -->
+		<ProgressRing Grid.Row="2"
+		              Width="32"
+		              Height="32"
+		              Margin="0 24 0 8"
+		              IsActive="True" />
+
 	</Grid>
 </UserControl>

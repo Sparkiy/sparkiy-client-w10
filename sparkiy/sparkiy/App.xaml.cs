@@ -14,6 +14,7 @@ using sparkiy.DI;
 using sparkiy.Logging;
 using sparkiy.Services.UI;
 using sparkiy.ViewModels;
+using sparkiy.ViewModels.Devices.IoT.Windows;
 using sparkiy.Views;
 using Serilog;
 
@@ -59,6 +60,7 @@ namespace sparkiy
 			
 			// Register view models
 			Container.Instance.RegisterType<IHomeViewModel, HomeViewModel>();
+			Container.Instance.RegisterType<IDeviceSetupViewModel, DeviceSetupViewModel>();
 		}
 
 		/// <summary>
