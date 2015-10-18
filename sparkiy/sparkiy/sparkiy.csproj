@@ -123,8 +123,22 @@
     <Compile Include="Styles\PivotStyles.xaml.cs">
       <DependentUpon>PivotStyles.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\Devices\IoT\Windows\SetupWelcomeViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
+    <Compile Include="ViewModels\IPageViewModel.cs" />
     <Compile Include="ViewModels\Utilities\ViewModelResolver.cs" />
+    <Compile Include="Views\Devices\IoT\Windows\DeviceSetupAutoFindDeviceConfirmView.xaml.cs">
+      <DependentUpon>DeviceSetupAutoFindDeviceConfirmView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Devices\IoT\Windows\DeviceSetupAutoFindDeviceView.xaml.cs">
+      <DependentUpon>DeviceSetupAutoFindDeviceView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Devices\IoT\Windows\DeviceSetupView.xaml.cs">
+      <DependentUpon>DeviceSetupView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Devices\IoT\Windows\DeviceSetupWelcomeView.xaml.cs">
+      <DependentUpon>DeviceSetupWelcomeView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
@@ -169,10 +183,31 @@
       <Generator>MSBuild:Compile</Generator>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Page>
+    <Page Include="Styles\Icons.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
     <Page Include="Styles\PivotStyles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+    <Page Include="Views\Devices\IoT\Windows\DeviceSetupAutoFindDeviceConfirmView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Devices\IoT\Windows\DeviceSetupAutoFindDeviceView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Devices\IoT\Windows\DeviceSetupView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Devices\IoT\Windows\DeviceSetupWelcomeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\HomePage.xaml">
       <SubType>Designer</SubType>
@@ -200,6 +235,7 @@
       <Name>sparkiy.Connectors.WindowsIoT</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

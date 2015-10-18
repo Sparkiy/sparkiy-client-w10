@@ -2,28 +2,14 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
-using GalaSoft.MvvmLight.Threading;
 using sparkiy.Connectors.Discourse;
-using sparkiy.Connectors.IoT.Windows;
 using sparkiy.Connectors.Tumblr;
 using sparkiy.Services.UI;
 
 namespace sparkiy.ViewModels
 {
-	/// <summary>
-	/// Page view mode contract.
-	/// </summary>
-	public interface IPageViewModel
-	{
-		/// <summary>
-		/// Occurs on page loaded.
-		/// </summary>
-		Task LoadedAsync();
-	}
-
 	/// <summary>
 	/// Home view model contract.
 	/// </summary>
@@ -128,9 +114,6 @@ namespace sparkiy.ViewModels
 
 			// Wait for all tasks to finish
 			await Task.WhenAll(tasks.Select(t => t()));
-
-			var api = new DeviceApi();
-			var info = await api.GetInstalledAppXPackages();
 		}
 
 		/// <summary>

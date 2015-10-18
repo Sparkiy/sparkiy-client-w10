@@ -149,6 +149,10 @@ namespace sparkiy
 			Window.Current.Activate();
 		}
 
+		/// <summary>
+		/// Handles the <see cref="E:Activated" /> event.
+		/// </summary>
+		/// <param name="args">The <see cref="IActivatedEventArgs"/> instance containing the event data.</param>
 		protected override void OnActivated(IActivatedEventArgs args)
 		{
 			// Start tracking

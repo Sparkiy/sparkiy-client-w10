@@ -7,6 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:pivot="using:sparkiy.Controls.Pivot"
 	xmlns:tumblr="using:sparkiy.Connectors.Tumblr"
+	xmlns:windows="using:sparkiy.Views.Devices.IoT.Windows"
 	mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -53,6 +54,12 @@
                 </PivotItem.Header>
                 <TextBlock>My Projects</TextBlock>
             </PivotItem>
+			<PivotItem>
+				<PivotItem.Header>
+					<pivot:PivotTabHeader Label="Devices" Glyph="device" />
+				</PivotItem.Header>
+				<windows:DeviceSetupView />
+			</PivotItem>
         </Pivot>
 
         <!-- Visual states -->
