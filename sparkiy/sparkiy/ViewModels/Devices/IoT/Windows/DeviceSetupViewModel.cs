@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
 using GalaSoft.MvvmLight.Command;
+using GalaSoft.MvvmLight.Threading;
+using sparkiy.Services.Devices;
 
 namespace sparkiy.ViewModels.Devices.IoT.Windows
 {
@@ -38,15 +40,23 @@ namespace sparkiy.ViewModels.Devices.IoT.Windows
 	{
 		private DeviceSetupSteps? currentStep;
 
+		private IDeviceSetupService deviceSetupService;
+		private DeviceInfo deviceInfo;
+
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="DeviceSetupViewModel"/> class.
 		/// </summary>
 		public DeviceSetupViewModel()
 		{
+			this.deviceSetupService = new DeviceSetupService();
+
 			// Initialize commands
 			this.ProgressForwardCommand = new RelayCommand(this.ProgressForward);
 			this.ProgressBackwardCommand = new RelayCommand(this.ProgressBackward);
+
+			// Attach to progress changed event
+			this.OnProgress += OnProgressChanged;
 		}
 
 
@@ -59,6 +69,32 @@ namespace sparkiy.ViewModels.Devices.IoT.Windows
 			this.ProgressForward();
 		}
 
+		private void OnProgressChanged(object sender, DeviceSetupProgressEventArgs args)
+		{
+			if (args.NextStep == DeviceSetupSteps.FindingDevice)
+			{
+				// Start connecting to the device
+				Task.Run(() => this.StartAutoConnect());
+				return;
+			}
+		}
+
+		private async Task StartAutoConnect()
+		{
+			// Try to connect to the device automatically
+			var didConnect = await this.deviceSetupService.TryAutoConnect();
+			if (!didConnect)
+			{
+				// Go back if connection fails
+				this.ProgressBackward();
+				return;
+			}
+
+			// Retrieve device information and go forward if connection is made
+			this.deviceInfo = await this.deviceSetupService.TryGetDeviceInfo();
+			this.ProgressForward();
+		}
+
 		/// <summary>
 		/// Raises the on progress event.
 		/// </summary>
@@ -68,7 +104,8 @@ namespace sparkiy.ViewModels.Devices.IoT.Windows
 		/// </remarks>
 		private void RaiseOnProgressEvent(DeviceSetupSteps nextStep)
 		{
-			this.OnProgress?.Invoke(this, new DeviceSetupProgressEventArgs(this.currentStep, nextStep));
+			DispatcherHelper.CheckBeginInvokeOnUI(() =>
+				this.OnProgress?.Invoke(this, new DeviceSetupProgressEventArgs(this.currentStep, nextStep)));
 		}
 
 		/// <summary>

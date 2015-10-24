@@ -114,6 +114,7 @@
     <Compile Include="Extensions\ResourceDictionaryExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DI\Container.cs" />
+    <Compile Include="Services\Devices\DeviceSetupService.cs" />
     <Compile Include="Services\UI\TitleBarService.cs" />
     <Compile Include="StateTriggers\IsFalseStateTrigger.cs" />
     <Compile Include="StateTriggers\ITriggerValue.cs" />
