@@ -1,9 +1,4 @@
-﻿using Windows.UI;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Media;
-using sparkiy.Extensions;
-using sparkiy.ViewModels;
+﻿using sparkiy.ViewModels;
 using sparkiy.ViewModels.Utilities;
 
 namespace sparkiy.Views
@@ -11,7 +6,7 @@ namespace sparkiy.Views
 	/// <summary>
 	/// Home page view.
 	/// </summary>
-	public sealed partial class HomePage : Page
+	public sealed partial class HomePage
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="HomePage"/> class.
@@ -24,6 +19,7 @@ namespace sparkiy.Views
 			// Trigger view model loaded on page loaded
 			this.Loaded += async (sender, args) => await this.ViewModel.LoadedAsync();
 
+			// Initialize view and set data context
 			this.InitializeComponent();
 			this.DataContext = this;
 		}
