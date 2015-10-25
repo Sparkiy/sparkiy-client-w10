@@ -91,7 +91,7 @@ namespace sparkiy.ViewModels.Devices.IoT.Windows
 			}
 
 			// Retrieve device information and go forward if connection is made
-			this.deviceInfo = await this.deviceSetupService.TryGetDeviceInfo();
+			this.deviceInfo = await this.deviceSetupService.GetDeviceInfo();
 			this.ProgressForward();
 		}
 
