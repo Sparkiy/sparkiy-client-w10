@@ -17,6 +17,25 @@ namespace sparkiy.ViewModels.Devices.IoT.Windows
 		event DeviceSetupProgressEventHandler OnProgress;
 
 		/// <summary>
+		/// Progresses forward.
+		/// </summary>
+		void ProgressForward();
+
+		/// <summary>
+		/// Progresses backward.
+		/// </summary>
+		void ProgressBackward();
+
+
+		/// <summary>
+		/// Gets or sets the device information.
+		/// </summary>
+		/// <value>
+		/// The device information.
+		/// </value>
+		DeviceInfo DeviceInfo { get; set; }
+
+		/// <summary>
 		/// Gets the progress forward command.
 		/// </summary>
 		/// <value>
@@ -40,8 +59,7 @@ namespace sparkiy.ViewModels.Devices.IoT.Windows
 	{
 		private DeviceSetupSteps? currentStep;
 
-		private IDeviceSetupService deviceSetupService;
-		private DeviceInfo deviceInfo;
+		private readonly IDeviceSetupService deviceSetupService;
 
 
 		/// <summary>
@@ -65,6 +83,9 @@ namespace sparkiy.ViewModels.Devices.IoT.Windows
 		/// </summary>
 		public async Task LoadedAsync()
 		{
+			// TODO Remove when using await in this method. This was added to remove warning.
+			await Task.Run(() => { });
+
 			// Go to initial step
 			this.ProgressForward();
 		}
@@ -91,7 +112,7 @@ namespace sparkiy.ViewModels.Devices.IoT.Windows
 			}
 
 			// Retrieve device information and go forward if connection is made
-			this.deviceInfo = await this.deviceSetupService.GetDeviceInfo();
+			this.DeviceInfo = await this.deviceSetupService.GetDeviceInfo();
 			this.ProgressForward();
 		}
 
@@ -165,6 +186,15 @@ namespace sparkiy.ViewModels.Devices.IoT.Windows
 		/// Occurs when progress is made.
 		/// </summary>
 		public event DeviceSetupProgressEventHandler OnProgress;
+
+
+		/// <summary>
+		/// Gets or sets the device information.
+		/// </summary>
+		/// <value>
+		/// The device information.
+		/// </value>
+		public DeviceInfo DeviceInfo { get; set; }
 
 		/// <summary>
 		/// Gets the progress forward command.
