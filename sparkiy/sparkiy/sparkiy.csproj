@@ -262,8 +262,14 @@
       <Project>{130C072C-07B2-48A1-B060-7FD18C416FA3}</Project>
       <Name>sparkiy.Connectors.WindowsIoT</Name>
     </ProjectReference>
+    <ProjectReference Include="..\sparkiy.Engine.Graphics.DirectX\sparkiy.Engine.Graphics.DirectX.vcxproj">
+      <Project>{3dec4c00-dffb-4c3f-b3d9-4ffb37063adc}</Project>
+      <Name>sparkiy.Engine.Graphics.DirectX</Name>
+    </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\Game\" />
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

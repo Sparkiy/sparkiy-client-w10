@@ -11,10 +11,16 @@
     <Filter Include="Common">
       <UniqueIdentifier>{4db04ac3-46a2-4eb5-a9ef-73fa723300b9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{0fbaa573-b3e7-4a64-906c-7e4460467d3a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp" />
     <ClCompile Include="DirectXPanelBase.cpp">
+      <Filter>Panels</Filter>
+    </ClCompile>
+    <ClCompile Include="SparkiyPanel.cpp">
       <Filter>Panels</Filter>
     </ClCompile>
   </ItemGroup>
@@ -29,5 +35,22 @@
     <ClInclude Include="DirectXHelper.h">
       <Filter>Common</Filter>
     </ClInclude>
+    <ClInclude Include="SparkiyPanel.h">
+      <Filter>Panels</Filter>
+    </ClInclude>
+    <ClInclude Include="StepTimer.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderStructures.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="SimplePixelShader.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="SimpleVertexShader.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
   </ItemGroup>
 </Project>

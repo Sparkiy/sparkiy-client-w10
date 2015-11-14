@@ -1,0 +1,8 @@
+loadlib (whole)
+liolib (whole)
+loslib
+	getenv (os_getenv)
+	execute (os_execute)
+	exit (os_exit)
+	rename (os_rename)
+	remove (os_remove)

@@ -1,99 +1,106 @@
-﻿<Page
-    x:Class="sparkiy.Views.HomePage"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:sparkiy.Views"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:pivot="using:sparkiy.Controls.Pivot"
-	xmlns:tumblr="using:sparkiy.Connectors.Tumblr"
-	xmlns:windows="using:sparkiy.Views.Devices.IoT.Windows"
-	mc:Ignorable="d">
+﻿<Page x:Class="sparkiy.Views.HomePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="using:sparkiy.Views"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:pivot="using:sparkiy.Controls.Pivot"
+      xmlns:sparkiyEngineGraphicsDirectX="using:sparkiy_Engine_Graphics_DirectX"
+      xmlns:tumblr="using:sparkiy.Connectors.Tumblr"
+      xmlns:windows="using:sparkiy.Views.Devices.IoT.Windows"
+      mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Pivot x:Name="RootPivot" Style="{StaticResource TabsStylePivotStyle}">
-            <PivotItem>
-                <PivotItem.Header>
-                    <pivot:PivotTabHeader Label="Dashboard" Glyph="&#xE80F;" />
-                </PivotItem.Header>
+	<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-                <RelativePanel>
-                    <Grid x:Name="StartGrid" Width="320">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="*" />
-                        </Grid.RowDefinitions>
-
-                        <TextBlock Text="Start" Style="{StaticResource SectionHeaderTextBlockStyle}" />
-                        <ContentPresenter ContentTemplate="{StaticResource StartDataTemplate}" Grid.Row="1" />
-                    </Grid>
-                    <Grid x:Name="LatestNewsGrid" Width="420">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="*" />
-                        </Grid.RowDefinitions>
-
-                        <TextBlock Text="News" Style="{StaticResource SectionHeaderTextBlockStyle}" />
-                        <ContentPresenter ContentTemplate="{StaticResource LatestNewsDataTemplate}" Grid.Row="1" />
-                    </Grid>
-                    <Grid x:Name="LatestDiscussionsGrid" Width="420">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="*" />
-                        </Grid.RowDefinitions>
-
-                        <TextBlock Text="Discussions" Style="{StaticResource SectionHeaderTextBlockStyle}" />
-                        <ContentPresenter ContentTemplate="{StaticResource LatestDiscussionsDataTemplate}" Grid.Row="1" />
-                    </Grid>
-                </RelativePanel>
-
-            </PivotItem>
-            <PivotItem>
-                <PivotItem.Header>
-                    <pivot:PivotTabHeader Label="Projects" Glyph="&#xE8B7;" />
-                </PivotItem.Header>
-                <TextBlock>My Projects</TextBlock>
-            </PivotItem>
-			<PivotItem>
-				<PivotItem.Header>
-					<pivot:PivotTabHeader Label="Devices" Glyph="device" />
-				</PivotItem.Header>
-				<windows:DeviceSetupView />
-			</PivotItem>
-        </Pivot>
-
-        <!-- Visual states -->
-        <VisualStateManager.VisualStateGroups>
-            <VisualStateGroup x:Name="ResponsiveStates">
-                <VisualState x:Name="WideScreen">
+		<!--  Visual states  -->
+		<VisualStateManager.VisualStateGroups>
+			<VisualStateGroup x:Name="ResponsiveStates">
+				<VisualState x:Name="WideScreen">
 					<VisualState.StateTriggers>
 						<AdaptiveTrigger MinWindowWidth="1160" />
 					</VisualState.StateTriggers>
 					<VisualState.Setters>
-                        <Setter Target="LatestDiscussionsGrid.(RelativePanel.RightOf)" Value="LatestNewsGrid" />
-                        <Setter Target="LatestNewsGrid.(RelativePanel.RightOf)" Value="StartGrid" />
-                    </VisualState.Setters>
+						<Setter Target="LatestDiscussionsGrid.(RelativePanel.RightOf)" Value="LatestNewsGrid" />
+						<Setter Target="LatestNewsGrid.(RelativePanel.RightOf)" Value="StartGrid" />
+					</VisualState.Setters>
 				</VisualState>
-                <VisualState x:Name="MediumScreen">
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="740" />
-                    </VisualState.StateTriggers>
-                    <VisualState.Setters>
-                        <Setter Target="LatestNewsGrid.(RelativePanel.RightOf)" Value="StartGrid" />
-                        <Setter Target="LatestDiscussionsGrid.(RelativePanel.Below)" Value="LatestNewsGrid" />
-                        <Setter Target="LatestDiscussionsGrid.(RelativePanel.RightOf)" Value="StartGrid" />
-                    </VisualState.Setters>
-                </VisualState>
-                <VisualState x:Name="SmallScreen">
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="420" />
-                    </VisualState.StateTriggers>
-                    <VisualState.Setters>
-                        <Setter Target="LatestNewsGrid.(RelativePanel.Below)" Value="StartGrid" />
-                        <Setter Target="LatestDiscussionsGrid.(RelativePanel.Below)" Value="LatestNewsGrid" />
-                    </VisualState.Setters>
-                </VisualState>
+				<VisualState x:Name="MediumScreen">
+					<VisualState.StateTriggers>
+						<AdaptiveTrigger MinWindowWidth="740" />
+					</VisualState.StateTriggers>
+					<VisualState.Setters>
+						<Setter Target="LatestNewsGrid.(RelativePanel.RightOf)" Value="StartGrid" />
+						<Setter Target="LatestDiscussionsGrid.(RelativePanel.Below)" Value="LatestNewsGrid" />
+						<Setter Target="LatestDiscussionsGrid.(RelativePanel.RightOf)" Value="StartGrid" />
+					</VisualState.Setters>
+				</VisualState>
+				<VisualState x:Name="SmallScreen">
+					<VisualState.StateTriggers>
+						<AdaptiveTrigger MinWindowWidth="420" />
+					</VisualState.StateTriggers>
+					<VisualState.Setters>
+						<Setter Target="LatestNewsGrid.(RelativePanel.Below)" Value="StartGrid" />
+						<Setter Target="LatestDiscussionsGrid.(RelativePanel.Below)" Value="LatestNewsGrid" />
+					</VisualState.Setters>
+				</VisualState>
 			</VisualStateGroup>
 		</VisualStateManager.VisualStateGroups>
-    </Grid>
+		<Pivot x:Name="RootPivot" Style="{StaticResource TabsStylePivotStyle}">
+			<PivotItem>
+				<PivotItem.Header>
+					<pivot:PivotTabHeader Glyph="&#xE80F;" Label="Dashboard" />
+				</PivotItem.Header>
+
+				<RelativePanel>
+					<Grid x:Name="StartGrid" Width="320">
+						<Grid.RowDefinitions>
+							<RowDefinition Height="Auto" />
+							<RowDefinition Height="*" />
+						</Grid.RowDefinitions>
+
+						<TextBlock Style="{StaticResource SectionHeaderTextBlockStyle}" Text="Start" />
+						<ContentPresenter Grid.Row="1" ContentTemplate="{StaticResource StartDataTemplate}" />
+					</Grid>
+					<Grid x:Name="LatestNewsGrid" Width="420">
+						<Grid.RowDefinitions>
+							<RowDefinition Height="Auto" />
+							<RowDefinition Height="*" />
+						</Grid.RowDefinitions>
+
+						<TextBlock Style="{StaticResource SectionHeaderTextBlockStyle}" Text="News" />
+						<ContentPresenter Grid.Row="1" ContentTemplate="{StaticResource LatestNewsDataTemplate}" />
+					</Grid>
+					<Grid x:Name="LatestDiscussionsGrid" Width="420">
+						<Grid.RowDefinitions>
+							<RowDefinition Height="Auto" />
+							<RowDefinition Height="*" />
+						</Grid.RowDefinitions>
+
+						<TextBlock Style="{StaticResource SectionHeaderTextBlockStyle}" Text="Discussions" />
+						<ContentPresenter Grid.Row="1" ContentTemplate="{StaticResource LatestDiscussionsDataTemplate}" />
+					</Grid>
+				</RelativePanel>
+
+			</PivotItem>
+			<PivotItem>
+				<PivotItem.Header>
+					<pivot:PivotTabHeader Glyph="&#xE8B7;" Label="Projects" />
+				</PivotItem.Header>
+				<Grid>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="*" />
+					</Grid.RowDefinitions>
+					<TextBlock>My Projects</TextBlock>
+					<sparkiyEngineGraphicsDirectX:SparkiyPanel x:Name="SparkiyPanel" Grid.Row="1" />
+				</Grid>
+			</PivotItem>
+			<PivotItem>
+				<PivotItem.Header>
+					<pivot:PivotTabHeader Glyph="device" Label="Devices" />
+				</PivotItem.Header>
+				<windows:DeviceSetupView />
+			</PivotItem>
+		</Pivot>
+	</Grid>
 </Page>

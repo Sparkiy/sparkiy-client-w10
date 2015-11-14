@@ -55,9 +55,6 @@
     <ClCompile Include="lua\linit.c">
       <Filter>lua</Filter>
     </ClCompile>
-    <ClCompile Include="lua\liolib.c">
-      <Filter>lua</Filter>
-    </ClCompile>
     <ClCompile Include="lua\llex.c">
       <Filter>lua</Filter>
     </ClCompile>
@@ -201,5 +198,8 @@
     <ClInclude Include="lua\lzio.h">
       <Filter>lua</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="RemovedLibs.txt" />
   </ItemGroup>
 </Project>
