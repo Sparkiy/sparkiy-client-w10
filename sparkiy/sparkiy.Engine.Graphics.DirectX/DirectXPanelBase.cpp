@@ -36,6 +36,60 @@ using namespace DX;
 // TODO Retrieve from device
 static const float dipsPerInch = 96.0f;
 
+// TODO Use this somehow
+namespace DisplayMetrics
+{
+	// High resolution displays can require a lot of GPU and battery power to render.
+	// High resolution phones, for example, may suffer from poor battery life if
+	// games attempt to render at 60 frames per second at full fidelity.
+	// The decision to render at full fidelity across all platforms and form factors
+	// should be deliberate.
+	static const bool SupportHighResolutions = false;
+
+	// The default thresholds that define a "high resolution" display. If the thresholds
+	// are exceeded and SupportHighResolutions is false, the dimensions will be scaled
+	// by 50%.
+	static const float DpiThreshold = 192.0f;		// 200% of standard desktop display.
+	static const float WidthThreshold = 1920.0f;	// 1080p width.
+	static const float HeightThreshold = 1080.0f;	// 1080p height.
+};
+
+// TODO Use this somehow
+// Constants used to calculate screen rotations.
+namespace ScreenRotation
+{
+	// 0-degree Z-rotation
+	static const XMFLOAT4X4 Rotation0(
+		1.0f, 0.0f, 0.0f, 0.0f,
+		0.0f, 1.0f, 0.0f, 0.0f,
+		0.0f, 0.0f, 1.0f, 0.0f,
+		0.0f, 0.0f, 0.0f, 1.0f
+		);
+
+	// 90-degree Z-rotation
+	static const XMFLOAT4X4 Rotation90(
+		0.0f, 1.0f, 0.0f, 0.0f,
+		-1.0f, 0.0f, 0.0f, 0.0f,
+		0.0f, 0.0f, 1.0f, 0.0f,
+		0.0f, 0.0f, 0.0f, 1.0f
+		);
+
+	// 180-degree Z-rotation
+	static const XMFLOAT4X4 Rotation180(
+		-1.0f, 0.0f, 0.0f, 0.0f,
+		0.0f, -1.0f, 0.0f, 0.0f,
+		0.0f, 0.0f, 1.0f, 0.0f,
+		0.0f, 0.0f, 0.0f, 1.0f
+		);
+
+	// 270-degree Z-rotation
+	static const XMFLOAT4X4 Rotation270(
+		0.0f, -1.0f, 0.0f, 0.0f,
+		1.0f, 0.0f, 0.0f, 0.0f,
+		0.0f, 0.0f, 1.0f, 0.0f,
+		0.0f, 0.0f, 0.0f, 1.0f
+		);
+};
 
 /// <summary>
 /// Initializes a new instance of the <see cref="DirectXPanelBase"/> class.
@@ -45,7 +99,7 @@ DirectXPanelBase::DirectXPanelBase()
 	// Set default values
 	this->isLoadingComplete = false;
 	this->backgroundColor = D2D1::ColorF(D2D1::ColorF::White);
-	this->alphaMode = DXGI_ALPHA_MODE_UNSPECIFIED; // TODO Change this to allow alpha later
+	this->alphaMode = DXGI_ALPHA_MODE_IGNORE; // TODO Change this to allow alpha later
 	this->compositionScaleX = 1.0f;
 	this->compositionScaleY = 1.0f;
 	this->height = 1.0f;
@@ -88,10 +142,17 @@ void DirectXPanelBase::CreateDeviceResources()
 	// It is recommended usage, and is required for compatibility with Direct2D.
 	UINT creationFlags = D3D11_CREATE_DEVICE_BGRA_SUPPORT;
 
-#if defined(_DEBUG)
-	// If the project is in a debug build, enable debugging via SDK Layers with this flag.
-	//creationFlags |= D3D11_CREATE_DEVICE_DEBUG;
-#endif
+	// TODO Enable when using DirectX 12 3D
+//#if defined(_DEBUG)
+//	// If the project is in a debug build, enable debugging via SDK Layers.
+//	{
+//		ComPtr<ID3D12Debug> debugController;
+//		if (SUCCEEDED(D3D12GetDebugInterface(IID_PPV_ARGS(&debugController))))
+//		{
+//			debugController->EnableDebugLayer();
+//		}
+//	}
+//#endif
 
 	// This array defines the set of DirectX hardware feature levels this application will support.
 	// Note the ordering should be preserved.
@@ -185,23 +246,19 @@ void DirectXPanelBase::CreateSizeDependentResources()
 			D2D1_BITMAP_OPTIONS_TARGET | D2D1_BITMAP_OPTIONS_CANNOT_DRAW,
 			PixelFormat(DXGI_FORMAT_B8G8R8A8_UNORM, D2D1_ALPHA_MODE_PREMULTIPLIED),
 			dipsPerInch * this->compositionScaleX,
-			dipsPerInch * this->compositionScaleY
-			);
+			dipsPerInch * this->compositionScaleY);
 
 	// Direct2D needs the DXGI version of the back-buffer surface pointer.
 	ComPtr<IDXGISurface> dxgiBackBuffer;
 	DX::ThrowIfFailed(
-		this->swapChain->GetBuffer(0, IID_PPV_ARGS(&dxgiBackBuffer))
-		);
+		this->swapChain->GetBuffer(0, IID_PPV_ARGS(&dxgiBackBuffer)));
 
 	// Get a D2D surface from the DXGI back buffer to use as the D2D render target.
 	ThrowIfFailed(
 		this->d2dContext->CreateBitmapFromDxgiSurface(
 			dxgiBackBuffer.Get(),
 			&bitmapProperties,
-			&this->d2dTargetBitmap
-			)
-		);
+			&this->d2dTargetBitmap));
 
 	this->d2dContext->SetDpi(dipsPerInch * this->compositionScaleX, dipsPerInch * this->compositionScaleY);
 	this->d2dContext->SetTarget(this->d2dTargetBitmap.Get());
@@ -232,7 +289,7 @@ void DirectXPanelBase::ResizeSwapChain()
 void DirectXPanelBase::CreateSwapChain()
 {
 	// Create swap chain description
-	DXGI_SWAP_CHAIN_DESC1 swapChainDesc = { 0 };
+	DXGI_SWAP_CHAIN_DESC1 swapChainDesc = {};
 	swapChainDesc.Width = static_cast<UINT>(this->renderTargetWidth);      // Match the size of the panel.
 	swapChainDesc.Height = static_cast<UINT>(this->renderTargetHeight);
 	swapChainDesc.Format = DXGI_FORMAT_B8G8R8A8_UNORM;                  // This is the most common swap chain format.
@@ -270,6 +327,36 @@ void DirectXPanelBase::CreateSwapChain()
 			&swapChain
 			));
 	swapChain.As(&this->swapChain);
+
+	// TODO Uncomment when implemented on panel implementation
+	// TODO Add variable for saving the 3D transform
+	// Set the proper orientation for the swap chain, and generate
+	// 3D matrix transformations for rendering to the rotated swap chain.
+	// The 3D matrix is specified explicitly to avoid rounding errors.
+	//switch (displayRotation)
+	//{
+	//case DXGI_MODE_ROTATION_IDENTITY:
+	//	m_orientationTransform3D = ScreenRotation::Rotation0;
+	//	break;
+
+	//case DXGI_MODE_ROTATION_ROTATE90:
+	//	m_orientationTransform3D = ScreenRotation::Rotation270;
+	//	break;
+
+	//case DXGI_MODE_ROTATION_ROTATE180:
+	//	m_orientationTransform3D = ScreenRotation::Rotation180;
+	//	break;
+
+	//case DXGI_MODE_ROTATION_ROTATE270:
+	//	m_orientationTransform3D = ScreenRotation::Rotation90;
+	//	break;
+
+	//default:
+	//	throw ref new FailureException();
+	//}
+
+	//DX::ThrowIfFailed(
+	//	m_swapChain->SetRotation(displayRotation));
 
 	// Ensure that DXGI does not queue more than one frame at a time. This both reduces 
 	// latency and ensures that the application will only render after each VSync, minimizing 
@@ -322,14 +409,16 @@ void DirectXPanelBase::Present()
 /// <param name="e">The device suspending arguments.</param>
 void DirectXPanelBase::OnSuspending(Object^ sender, SuspendingEventArgs^ e)
 {
-	critical_section::scoped_lock lock(this->criticalSection);
+	{
+		critical_section::scoped_lock lock(this->criticalSection);
 
-	// Retrieve DXGI device
-	ComPtr<IDXGIDevice3> dxgiDevice;
-	this->d3dDevice.As(&dxgiDevice);
+		// Retrieve DXGI device
+		ComPtr<IDXGIDevice3> dxgiDevice;
+		this->d3dDevice.As(&dxgiDevice);
 
-	// Hints to the driver that the application is entering an idle state and that its memory can be used temporarily for other applications.
-	dxgiDevice->Trim();
+		// Hints to the driver that the application is entering an idle state and that its memory can be used temporarily for other applications.
+		dxgiDevice->Trim();
+	}
 }
 
 /// <summary>
@@ -343,14 +432,16 @@ void DirectXPanelBase::OnSizeChanged(Object^ sender, SizeChangedEventArgs^ e)
 	if (this->width == e->NewSize.Width && this->height == e->NewSize.Height)
 		return;
 	
-	critical_section::scoped_lock lock(this->criticalSection);
+	{
+		critical_section::scoped_lock lock(this->criticalSection);
+	
+		// Store values so they can be accessed from a background thread.
+		this->width = max(e->NewSize.Width, 1.0f);
+		this->height = max(e->NewSize.Height, 1.0f);
 
-	// Store values so they can be accessed from a background thread.
-	this->width = max(e->NewSize.Width, 1.0f);
-	this->height = max(e->NewSize.Height, 1.0f);
-
-	// Recreate size-dependent resources when the panel's size changes.
-	this->CreateSizeDependentResources();
+		// Recreate size-dependent resources when the panel's size changes.
+		this->CreateSizeDependentResources();
+	}
 }
 
 /// <summary>
@@ -365,14 +456,16 @@ void DirectXPanelBase::OnCompositionScaleChanged(SwapChainPanel ^sender, Object 
 		this->compositionScaleY == this->CompositionScaleY)
 		return;
 	
-	critical_section::scoped_lock lock(this->criticalSection);
+	{
+		critical_section::scoped_lock lock(this->criticalSection);
 
-	// Store values so they can be accessed from a background thread.
-	this->compositionScaleX = this->CompositionScaleX;
-	this->compositionScaleY = this->CompositionScaleY;
+		// Store values so they can be accessed from a background thread.
+		this->compositionScaleX = this->CompositionScaleX;
+		this->compositionScaleY = this->CompositionScaleY;
 
-	// Recreate size-dependent resources when the composition scale changes.
-	this->CreateSizeDependentResources();	
+		// Recreate size-dependent resources when the composition scale changes.
+		this->CreateSizeDependentResources();
+	}
 }
 
 /// <summary>
@@ -404,8 +497,8 @@ void DirectXPanelBase::OnDeviceLost()
 void DirectXPanelBase::ReleaseDependentObjects()
 {
 	// Make sure the rendering state has been released
-	this->d3dContext->OMSetRenderTargets(0, nullptr, nullptr);
-	this->d3dContext->Flush();
 	this->d2dContext->SetTarget(nullptr);
 	this->d2dTargetBitmap = nullptr;
+	this->d3dContext->OMSetRenderTargets(0, nullptr, nullptr);
+	this->d3dContext->Flush();
 }

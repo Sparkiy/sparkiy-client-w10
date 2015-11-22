@@ -121,7 +121,7 @@ void SparkiyPanel::Render()
 	// of elements depends on the application's scenario.
 	float lineThickness = this->compositionScaleX * 2.0f;
 	float strokeThickness = this->compositionScaleX * 4.0f;
-
+	
 	// Draw grid lines.
 	this->d2dContext->DrawLine(Point2F(horizontalSpacing, 0), Point2F(horizontalSpacing, this->renderTargetHeight), this->strokeBrush.Get(), lineThickness);
 	this->d2dContext->DrawLine(Point2F(horizontalSpacing * 2, 0), Point2F(horizontalSpacing * 2, this->renderTargetHeight), this->strokeBrush.Get(), lineThickness);
@@ -172,25 +172,20 @@ void SparkiyPanel::OnDeviceLost()
 {
 	// Handle device lost, then re-render.
 	DirectXPanelBase::OnDeviceLost();
-	Render();
 }
 
 void SparkiyPanel::OnSizeChanged(Platform::Object^ sender, SizeChangedEventArgs^ e)
 {
 	// Process SizeChanged event, then re-render at the new size.
 	DirectXPanelBase::OnSizeChanged(sender, e);
-	Render();
 }
 
 void SparkiyPanel::OnCompositionScaleChanged(SwapChainPanel ^sender, Object ^args)
 {
 	// Process CompositionScaleChanged event, then re-render at the new scale.
 	DirectXPanelBase::OnCompositionScaleChanged(sender, args);
-	Render();
 }
 
 void SparkiyPanel::OnResuming(Object^ sender, Object^ args)
 {
-	// Ensure content is rendered when the application is resumed.
-	Render();
 }
