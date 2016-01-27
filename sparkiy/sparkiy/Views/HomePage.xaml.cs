@@ -1,4 +1,5 @@
-﻿using sparkiy.ViewModels;
+﻿using Windows.UI.Xaml;
+using sparkiy.ViewModels;
 using sparkiy.ViewModels.Utilities;
 
 namespace sparkiy.Views
@@ -17,7 +18,11 @@ namespace sparkiy.Views
 			this.ViewModel = ViewModelResolver.Home;
 
 			// Trigger view model loaded on page loaded
-			this.Loaded += async (sender, args) => await this.ViewModel.LoadedAsync();
+			this.Loaded += async (sender, args) =>
+			{
+				await this.ViewModel.LoadedAsync();
+				this.SparkiyPanel.StartRenderLoop();
+			};
 
 			// Initialize view and set data context
 			this.InitializeComponent();

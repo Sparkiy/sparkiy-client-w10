@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.24627.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sparkiy", "sparkiy\sparkiy.csproj", "{E9201380-2718-44C6-9BF2-ECBE435A5A77}"
 EndProject
@@ -21,6 +21,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sparkiy.Connectors.Discourse", "sparkiy.Connectors.Discourse\sparkiy.Connectors.Discourse.csproj", "{44BDE5EE-5BF9-45AA-B1EE-6187C76A9FC6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sparkiy.Connectors.WindowsIoT", "sparkiy.Connectors.WindowsIoT\sparkiy.Connectors.WindowsIoT.csproj", "{130C072C-07B2-48A1-B060-7FD18C416FA3}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sparkiy.Engine.Lua.InterpreterC", "sparkiy.Engine.Lua.InterpreterC\sparkiy.Engine.Lua.InterpreterC.vcxproj", "{61EDEE95-A440-49EF-9BE1-2C3462950589}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sparkiy.Engine.Graphics.DirectX", "sparkiy.Engine.Graphics.DirectX\sparkiy.Engine.Graphics.DirectX.vcxproj", "{3DEC4C00-DFFB-4C3F-B3D9-4FFB37063ADC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -118,6 +122,34 @@ Global
 		{130C072C-07B2-48A1-B060-7FD18C416FA3}.Release|x64.Build.0 = Release|x64
 		{130C072C-07B2-48A1-B060-7FD18C416FA3}.Release|x86.ActiveCfg = Release|x86
 		{130C072C-07B2-48A1-B060-7FD18C416FA3}.Release|x86.Build.0 = Release|x86
+		{61EDEE95-A440-49EF-9BE1-2C3462950589}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{61EDEE95-A440-49EF-9BE1-2C3462950589}.Debug|ARM.ActiveCfg = Debug|ARM
+		{61EDEE95-A440-49EF-9BE1-2C3462950589}.Debug|ARM.Build.0 = Debug|ARM
+		{61EDEE95-A440-49EF-9BE1-2C3462950589}.Debug|x64.ActiveCfg = Debug|x64
+		{61EDEE95-A440-49EF-9BE1-2C3462950589}.Debug|x64.Build.0 = Debug|x64
+		{61EDEE95-A440-49EF-9BE1-2C3462950589}.Debug|x86.ActiveCfg = Debug|Win32
+		{61EDEE95-A440-49EF-9BE1-2C3462950589}.Debug|x86.Build.0 = Debug|Win32
+		{61EDEE95-A440-49EF-9BE1-2C3462950589}.Release|Any CPU.ActiveCfg = Release|Win32
+		{61EDEE95-A440-49EF-9BE1-2C3462950589}.Release|ARM.ActiveCfg = Release|ARM
+		{61EDEE95-A440-49EF-9BE1-2C3462950589}.Release|ARM.Build.0 = Release|ARM
+		{61EDEE95-A440-49EF-9BE1-2C3462950589}.Release|x64.ActiveCfg = Release|x64
+		{61EDEE95-A440-49EF-9BE1-2C3462950589}.Release|x64.Build.0 = Release|x64
+		{61EDEE95-A440-49EF-9BE1-2C3462950589}.Release|x86.ActiveCfg = Release|Win32
+		{61EDEE95-A440-49EF-9BE1-2C3462950589}.Release|x86.Build.0 = Release|Win32
+		{3DEC4C00-DFFB-4C3F-B3D9-4FFB37063ADC}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{3DEC4C00-DFFB-4C3F-B3D9-4FFB37063ADC}.Debug|ARM.ActiveCfg = Debug|ARM
+		{3DEC4C00-DFFB-4C3F-B3D9-4FFB37063ADC}.Debug|ARM.Build.0 = Debug|ARM
+		{3DEC4C00-DFFB-4C3F-B3D9-4FFB37063ADC}.Debug|x64.ActiveCfg = Debug|x64
+		{3DEC4C00-DFFB-4C3F-B3D9-4FFB37063ADC}.Debug|x64.Build.0 = Debug|x64
+		{3DEC4C00-DFFB-4C3F-B3D9-4FFB37063ADC}.Debug|x86.ActiveCfg = Debug|Win32
+		{3DEC4C00-DFFB-4C3F-B3D9-4FFB37063ADC}.Debug|x86.Build.0 = Debug|Win32
+		{3DEC4C00-DFFB-4C3F-B3D9-4FFB37063ADC}.Release|Any CPU.ActiveCfg = Release|Win32
+		{3DEC4C00-DFFB-4C3F-B3D9-4FFB37063ADC}.Release|ARM.ActiveCfg = Release|ARM
+		{3DEC4C00-DFFB-4C3F-B3D9-4FFB37063ADC}.Release|ARM.Build.0 = Release|ARM
+		{3DEC4C00-DFFB-4C3F-B3D9-4FFB37063ADC}.Release|x64.ActiveCfg = Release|x64
+		{3DEC4C00-DFFB-4C3F-B3D9-4FFB37063ADC}.Release|x64.Build.0 = Release|x64
+		{3DEC4C00-DFFB-4C3F-B3D9-4FFB37063ADC}.Release|x86.ActiveCfg = Release|Win32
+		{3DEC4C00-DFFB-4C3F-B3D9-4FFB37063ADC}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
