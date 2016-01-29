@@ -11,7 +11,7 @@
           "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
         }
       },
-      "Microsoft.ApplicationInsights/1.2.0": {
+      "Microsoft.ApplicationInsights/1.2.3": {
         "compile": {
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
         },
@@ -19,9 +19,9 @@
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
         }
       },
-      "Microsoft.ApplicationInsights.PersistenceChannel/1.2.0": {
+      "Microsoft.ApplicationInsights.PersistenceChannel/1.2.3": {
         "dependencies": {
-          "Microsoft.ApplicationInsights": "[1.2.0, )"
+          "Microsoft.ApplicationInsights": "[1.2.3, )"
         },
         "compile": {
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.PersistenceChannel.dll": {}
@@ -30,10 +30,10 @@
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.PersistenceChannel.dll": {}
         }
       },
-      "Microsoft.ApplicationInsights.WindowsApps/1.1.0": {
+      "Microsoft.ApplicationInsights.WindowsApps/1.1.1": {
         "dependencies": {
-          "Microsoft.ApplicationInsights": "[1.1.0, )",
-          "Microsoft.ApplicationInsights.PersistenceChannel": "[1.1.0, )"
+          "Microsoft.ApplicationInsights": "[1.2.3, 1.2.3]",
+          "Microsoft.ApplicationInsights.PersistenceChannel": "[1.2.3, 1.2.3]"
         },
         "compile": {
           "lib/win81/Microsoft.ApplicationInsights.Extensibility.Windows.dll": {}
@@ -278,7 +278,7 @@
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
         }
       },
-      "Mindscape.Raygun4Net/5.1.1": {
+      "Mindscape.Raygun4Net/5.2.0": {
         "compile": {
           "lib/portable-net45+win81+wpa81+windows81/Mindscape.Raygun4Net.WindowsStore.dll": {}
         },
@@ -301,7 +301,7 @@
           "lib/windows81/GalaSoft.MvvmLight.Platform.dll": {}
         }
       },
-      "Newtonsoft.Json/7.0.1": {
+      "Newtonsoft.Json/8.0.2": {
         "compile": {
           "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll": {}
         },
@@ -309,15 +309,58 @@
           "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll": {}
         }
       },
-      "Portable.Ninject/3.3.1": {
+      "Rx-Core/2.3.0-beta2": {
+        "dependencies": {
+          "Rx-Interfaces": "[2.3.0-beta2, )"
+        },
         "compile": {
-          "lib/win8/Ninject.dll": {}
+          "lib/windows8/System.Reactive.Core.dll": {}
         },
         "runtime": {
-          "lib/win8/Ninject.dll": {}
+          "lib/windows8/System.Reactive.Core.dll": {}
         }
       },
-      "Serilog/1.5.11": {
+      "Rx-Interfaces/2.3.0-beta2": {
+        "compile": {
+          "lib/windows8/System.Reactive.Interfaces.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/System.Reactive.Interfaces.dll": {}
+        }
+      },
+      "Rx-Linq/2.3.0-beta2": {
+        "dependencies": {
+          "Rx-Core": "[2.3.0-beta2, )",
+          "Rx-Interfaces": "[2.3.0-beta2, )"
+        },
+        "compile": {
+          "lib/windows8/System.Reactive.Linq.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/System.Reactive.Linq.dll": {}
+        }
+      },
+      "Rx-Main/2.3.0-beta2": {
+        "dependencies": {
+          "Rx-Core": "[2.3.0-beta2, )",
+          "Rx-Interfaces": "[2.3.0-beta2, )",
+          "Rx-Linq": "[2.3.0-beta2, )",
+          "Rx-PlatformServices": "[2.3.0-beta2, )"
+        }
+      },
+      "Rx-PlatformServices/2.3.0-beta2": {
+        "dependencies": {
+          "Rx-Core": "[2.3.0-beta2, )",
+          "Rx-Interfaces": "[2.3.0-beta2, )"
+        },
+        "compile": {
+          "lib/windows8/System.Reactive.PlatformServices.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/System.Reactive.PlatformServices.dll": {}
+        }
+      },
+      "Serilog/1.5.14": {
         "compile": {
           "lib/portable-net45+win+wpa81+wp80+MonoAndroid10+MonoTouch10/Serilog.dll": {}
         },
@@ -1683,7 +1726,7 @@
           "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
         }
       },
-      "Microsoft.ApplicationInsights/1.2.0": {
+      "Microsoft.ApplicationInsights/1.2.3": {
         "compile": {
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
         },
@@ -1691,9 +1734,9 @@
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
         }
       },
-      "Microsoft.ApplicationInsights.PersistenceChannel/1.2.0": {
+      "Microsoft.ApplicationInsights.PersistenceChannel/1.2.3": {
         "dependencies": {
-          "Microsoft.ApplicationInsights": "[1.2.0, )"
+          "Microsoft.ApplicationInsights": "[1.2.3, )"
         },
         "compile": {
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.PersistenceChannel.dll": {}
@@ -1702,10 +1745,10 @@
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.PersistenceChannel.dll": {}
         }
       },
-      "Microsoft.ApplicationInsights.WindowsApps/1.1.0": {
+      "Microsoft.ApplicationInsights.WindowsApps/1.1.1": {
         "dependencies": {
-          "Microsoft.ApplicationInsights": "[1.1.0, )",
-          "Microsoft.ApplicationInsights.PersistenceChannel": "[1.1.0, )"
+          "Microsoft.ApplicationInsights": "[1.2.3, 1.2.3]",
+          "Microsoft.ApplicationInsights.PersistenceChannel": "[1.2.3, 1.2.3]"
         },
         "compile": {
           "lib/win81/Microsoft.ApplicationInsights.Extensibility.Windows.dll": {}
@@ -1993,7 +2036,7 @@
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
         }
       },
-      "Mindscape.Raygun4Net/5.1.1": {
+      "Mindscape.Raygun4Net/5.2.0": {
         "compile": {
           "lib/portable-net45+win81+wpa81+windows81/Mindscape.Raygun4Net.WindowsStore.dll": {}
         },
@@ -2016,7 +2059,7 @@
           "lib/windows81/GalaSoft.MvvmLight.Platform.dll": {}
         }
       },
-      "Newtonsoft.Json/7.0.1": {
+      "Newtonsoft.Json/8.0.2": {
         "compile": {
           "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll": {}
         },
@@ -2024,15 +2067,58 @@
           "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll": {}
         }
       },
-      "Portable.Ninject/3.3.1": {
+      "Rx-Core/2.3.0-beta2": {
+        "dependencies": {
+          "Rx-Interfaces": "[2.3.0-beta2, )"
+        },
         "compile": {
-          "lib/win8/Ninject.dll": {}
+          "lib/windows8/System.Reactive.Core.dll": {}
         },
         "runtime": {
-          "lib/win8/Ninject.dll": {}
+          "lib/windows8/System.Reactive.Core.dll": {}
         }
       },
-      "Serilog/1.5.11": {
+      "Rx-Interfaces/2.3.0-beta2": {
+        "compile": {
+          "lib/windows8/System.Reactive.Interfaces.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/System.Reactive.Interfaces.dll": {}
+        }
+      },
+      "Rx-Linq/2.3.0-beta2": {
+        "dependencies": {
+          "Rx-Core": "[2.3.0-beta2, )",
+          "Rx-Interfaces": "[2.3.0-beta2, )"
+        },
+        "compile": {
+          "lib/windows8/System.Reactive.Linq.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/System.Reactive.Linq.dll": {}
+        }
+      },
+      "Rx-Main/2.3.0-beta2": {
+        "dependencies": {
+          "Rx-Core": "[2.3.0-beta2, )",
+          "Rx-Interfaces": "[2.3.0-beta2, )",
+          "Rx-Linq": "[2.3.0-beta2, )",
+          "Rx-PlatformServices": "[2.3.0-beta2, )"
+        }
+      },
+      "Rx-PlatformServices/2.3.0-beta2": {
+        "dependencies": {
+          "Rx-Core": "[2.3.0-beta2, )",
+          "Rx-Interfaces": "[2.3.0-beta2, )"
+        },
+        "compile": {
+          "lib/windows8/System.Reactive.PlatformServices.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/System.Reactive.PlatformServices.dll": {}
+        }
+      },
+      "Serilog/1.5.14": {
         "compile": {
           "lib/portable-net45+win+wpa81+wp80+MonoAndroid10+MonoTouch10/Serilog.dll": {}
         },
@@ -3445,7 +3531,7 @@
           "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
         }
       },
-      "Microsoft.ApplicationInsights/1.2.0": {
+      "Microsoft.ApplicationInsights/1.2.3": {
         "compile": {
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
         },
@@ -3453,9 +3539,9 @@
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
         }
       },
-      "Microsoft.ApplicationInsights.PersistenceChannel/1.2.0": {
+      "Microsoft.ApplicationInsights.PersistenceChannel/1.2.3": {
         "dependencies": {
-          "Microsoft.ApplicationInsights": "[1.2.0, )"
+          "Microsoft.ApplicationInsights": "[1.2.3, )"
         },
         "compile": {
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.PersistenceChannel.dll": {}
@@ -3464,10 +3550,10 @@
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.PersistenceChannel.dll": {}
         }
       },
-      "Microsoft.ApplicationInsights.WindowsApps/1.1.0": {
+      "Microsoft.ApplicationInsights.WindowsApps/1.1.1": {
         "dependencies": {
-          "Microsoft.ApplicationInsights": "[1.1.0, )",
-          "Microsoft.ApplicationInsights.PersistenceChannel": "[1.1.0, )"
+          "Microsoft.ApplicationInsights": "[1.2.3, 1.2.3]",
+          "Microsoft.ApplicationInsights.PersistenceChannel": "[1.2.3, 1.2.3]"
         },
         "compile": {
           "lib/win81/Microsoft.ApplicationInsights.Extensibility.Windows.dll": {}
@@ -3741,7 +3827,7 @@
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
         }
       },
-      "Mindscape.Raygun4Net/5.1.1": {
+      "Mindscape.Raygun4Net/5.2.0": {
         "compile": {
           "lib/portable-net45+win81+wpa81+windows81/Mindscape.Raygun4Net.WindowsStore.dll": {}
         },
@@ -3764,7 +3850,7 @@
           "lib/windows81/GalaSoft.MvvmLight.Platform.dll": {}
         }
       },
-      "Newtonsoft.Json/7.0.1": {
+      "Newtonsoft.Json/8.0.2": {
         "compile": {
           "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll": {}
         },
@@ -3772,15 +3858,58 @@
           "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll": {}
         }
       },
-      "Portable.Ninject/3.3.1": {
+      "Rx-Core/2.3.0-beta2": {
+        "dependencies": {
+          "Rx-Interfaces": "[2.3.0-beta2, )"
+        },
         "compile": {
-          "lib/win8/Ninject.dll": {}
+          "lib/windows8/System.Reactive.Core.dll": {}
         },
         "runtime": {
-          "lib/win8/Ninject.dll": {}
+          "lib/windows8/System.Reactive.Core.dll": {}
         }
       },
-      "Serilog/1.5.11": {
+      "Rx-Interfaces/2.3.0-beta2": {
+        "compile": {
+          "lib/windows8/System.Reactive.Interfaces.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/System.Reactive.Interfaces.dll": {}
+        }
+      },
+      "Rx-Linq/2.3.0-beta2": {
+        "dependencies": {
+          "Rx-Core": "[2.3.0-beta2, )",
+          "Rx-Interfaces": "[2.3.0-beta2, )"
+        },
+        "compile": {
+          "lib/windows8/System.Reactive.Linq.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/System.Reactive.Linq.dll": {}
+        }
+      },
+      "Rx-Main/2.3.0-beta2": {
+        "dependencies": {
+          "Rx-Core": "[2.3.0-beta2, )",
+          "Rx-Interfaces": "[2.3.0-beta2, )",
+          "Rx-Linq": "[2.3.0-beta2, )",
+          "Rx-PlatformServices": "[2.3.0-beta2, )"
+        }
+      },
+      "Rx-PlatformServices/2.3.0-beta2": {
+        "dependencies": {
+          "Rx-Core": "[2.3.0-beta2, )",
+          "Rx-Interfaces": "[2.3.0-beta2, )"
+        },
+        "compile": {
+          "lib/windows8/System.Reactive.PlatformServices.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/System.Reactive.PlatformServices.dll": {}
+        }
+      },
+      "Serilog/1.5.14": {
         "compile": {
           "lib/portable-net45+win+wpa81+wp80+MonoAndroid10+MonoTouch10/Serilog.dll": {}
         },
@@ -5179,7 +5308,7 @@
           "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
         }
       },
-      "Microsoft.ApplicationInsights/1.2.0": {
+      "Microsoft.ApplicationInsights/1.2.3": {
         "compile": {
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
         },
@@ -5187,9 +5316,9 @@
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
         }
       },
-      "Microsoft.ApplicationInsights.PersistenceChannel/1.2.0": {
+      "Microsoft.ApplicationInsights.PersistenceChannel/1.2.3": {
         "dependencies": {
-          "Microsoft.ApplicationInsights": "[1.2.0, )"
+          "Microsoft.ApplicationInsights": "[1.2.3, )"
         },
         "compile": {
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.PersistenceChannel.dll": {}
@@ -5198,10 +5327,10 @@
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.PersistenceChannel.dll": {}
         }
       },
-      "Microsoft.ApplicationInsights.WindowsApps/1.1.0": {
+      "Microsoft.ApplicationInsights.WindowsApps/1.1.1": {
         "dependencies": {
-          "Microsoft.ApplicationInsights": "[1.1.0, )",
-          "Microsoft.ApplicationInsights.PersistenceChannel": "[1.1.0, )"
+          "Microsoft.ApplicationInsights": "[1.2.3, 1.2.3]",
+          "Microsoft.ApplicationInsights.PersistenceChannel": "[1.2.3, 1.2.3]"
         },
         "compile": {
           "lib/win81/Microsoft.ApplicationInsights.Extensibility.Windows.dll": {}
@@ -5494,7 +5623,7 @@
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
         }
       },
-      "Mindscape.Raygun4Net/5.1.1": {
+      "Mindscape.Raygun4Net/5.2.0": {
         "compile": {
           "lib/portable-net45+win81+wpa81+windows81/Mindscape.Raygun4Net.WindowsStore.dll": {}
         },
@@ -5517,7 +5646,7 @@
           "lib/windows81/GalaSoft.MvvmLight.Platform.dll": {}
         }
       },
-      "Newtonsoft.Json/7.0.1": {
+      "Newtonsoft.Json/8.0.2": {
         "compile": {
           "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll": {}
         },
@@ -5525,15 +5654,58 @@
           "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll": {}
         }
       },
-      "Portable.Ninject/3.3.1": {
+      "Rx-Core/2.3.0-beta2": {
+        "dependencies": {
+          "Rx-Interfaces": "[2.3.0-beta2, )"
+        },
         "compile": {
-          "lib/win8/Ninject.dll": {}
+          "lib/windows8/System.Reactive.Core.dll": {}
         },
         "runtime": {
-          "lib/win8/Ninject.dll": {}
+          "lib/windows8/System.Reactive.Core.dll": {}
         }
       },
-      "Serilog/1.5.11": {
+      "Rx-Interfaces/2.3.0-beta2": {
+        "compile": {
+          "lib/windows8/System.Reactive.Interfaces.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/System.Reactive.Interfaces.dll": {}
+        }
+      },
+      "Rx-Linq/2.3.0-beta2": {
+        "dependencies": {
+          "Rx-Core": "[2.3.0-beta2, )",
+          "Rx-Interfaces": "[2.3.0-beta2, )"
+        },
+        "compile": {
+          "lib/windows8/System.Reactive.Linq.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/System.Reactive.Linq.dll": {}
+        }
+      },
+      "Rx-Main/2.3.0-beta2": {
+        "dependencies": {
+          "Rx-Core": "[2.3.0-beta2, )",
+          "Rx-Interfaces": "[2.3.0-beta2, )",
+          "Rx-Linq": "[2.3.0-beta2, )",
+          "Rx-PlatformServices": "[2.3.0-beta2, )"
+        }
+      },
+      "Rx-PlatformServices/2.3.0-beta2": {
+        "dependencies": {
+          "Rx-Core": "[2.3.0-beta2, )",
+          "Rx-Interfaces": "[2.3.0-beta2, )"
+        },
+        "compile": {
+          "lib/windows8/System.Reactive.PlatformServices.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/System.Reactive.PlatformServices.dll": {}
+        }
+      },
+      "Serilog/1.5.14": {
         "compile": {
           "lib/portable-net45+win+wpa81+wp80+MonoAndroid10+MonoTouch10/Serilog.dll": {}
         },
@@ -6946,7 +7118,7 @@
           "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
         }
       },
-      "Microsoft.ApplicationInsights/1.2.0": {
+      "Microsoft.ApplicationInsights/1.2.3": {
         "compile": {
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
         },
@@ -6954,9 +7126,9 @@
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
         }
       },
-      "Microsoft.ApplicationInsights.PersistenceChannel/1.2.0": {
+      "Microsoft.ApplicationInsights.PersistenceChannel/1.2.3": {
         "dependencies": {
-          "Microsoft.ApplicationInsights": "[1.2.0, )"
+          "Microsoft.ApplicationInsights": "[1.2.3, )"
         },
         "compile": {
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.PersistenceChannel.dll": {}
@@ -6965,10 +7137,10 @@
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.PersistenceChannel.dll": {}
         }
       },
-      "Microsoft.ApplicationInsights.WindowsApps/1.1.0": {
+      "Microsoft.ApplicationInsights.WindowsApps/1.1.1": {
         "dependencies": {
-          "Microsoft.ApplicationInsights": "[1.1.0, )",
-          "Microsoft.ApplicationInsights.PersistenceChannel": "[1.1.0, )"
+          "Microsoft.ApplicationInsights": "[1.2.3, 1.2.3]",
+          "Microsoft.ApplicationInsights.PersistenceChannel": "[1.2.3, 1.2.3]"
         },
         "compile": {
           "lib/win81/Microsoft.ApplicationInsights.Extensibility.Windows.dll": {}
@@ -7242,7 +7414,7 @@
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
         }
       },
-      "Mindscape.Raygun4Net/5.1.1": {
+      "Mindscape.Raygun4Net/5.2.0": {
         "compile": {
           "lib/portable-net45+win81+wpa81+windows81/Mindscape.Raygun4Net.WindowsStore.dll": {}
         },
@@ -7265,7 +7437,7 @@
           "lib/windows81/GalaSoft.MvvmLight.Platform.dll": {}
         }
       },
-      "Newtonsoft.Json/7.0.1": {
+      "Newtonsoft.Json/8.0.2": {
         "compile": {
           "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll": {}
         },
@@ -7273,15 +7445,58 @@
           "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll": {}
         }
       },
-      "Portable.Ninject/3.3.1": {
+      "Rx-Core/2.3.0-beta2": {
+        "dependencies": {
+          "Rx-Interfaces": "[2.3.0-beta2, )"
+        },
         "compile": {
-          "lib/win8/Ninject.dll": {}
+          "lib/windows8/System.Reactive.Core.dll": {}
         },
         "runtime": {
-          "lib/win8/Ninject.dll": {}
+          "lib/windows8/System.Reactive.Core.dll": {}
         }
       },
-      "Serilog/1.5.11": {
+      "Rx-Interfaces/2.3.0-beta2": {
+        "compile": {
+          "lib/windows8/System.Reactive.Interfaces.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/System.Reactive.Interfaces.dll": {}
+        }
+      },
+      "Rx-Linq/2.3.0-beta2": {
+        "dependencies": {
+          "Rx-Core": "[2.3.0-beta2, )",
+          "Rx-Interfaces": "[2.3.0-beta2, )"
+        },
+        "compile": {
+          "lib/windows8/System.Reactive.Linq.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/System.Reactive.Linq.dll": {}
+        }
+      },
+      "Rx-Main/2.3.0-beta2": {
+        "dependencies": {
+          "Rx-Core": "[2.3.0-beta2, )",
+          "Rx-Interfaces": "[2.3.0-beta2, )",
+          "Rx-Linq": "[2.3.0-beta2, )",
+          "Rx-PlatformServices": "[2.3.0-beta2, )"
+        }
+      },
+      "Rx-PlatformServices/2.3.0-beta2": {
+        "dependencies": {
+          "Rx-Core": "[2.3.0-beta2, )",
+          "Rx-Interfaces": "[2.3.0-beta2, )"
+        },
+        "compile": {
+          "lib/windows8/System.Reactive.PlatformServices.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/System.Reactive.PlatformServices.dll": {}
+        }
+      },
+      "Serilog/1.5.14": {
         "compile": {
           "lib/portable-net45+win+wpa81+wp80+MonoAndroid10+MonoTouch10/Serilog.dll": {}
         },
@@ -8680,7 +8895,7 @@
           "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
         }
       },
-      "Microsoft.ApplicationInsights/1.2.0": {
+      "Microsoft.ApplicationInsights/1.2.3": {
         "compile": {
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
         },
@@ -8688,9 +8903,9 @@
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
         }
       },
-      "Microsoft.ApplicationInsights.PersistenceChannel/1.2.0": {
+      "Microsoft.ApplicationInsights.PersistenceChannel/1.2.3": {
         "dependencies": {
-          "Microsoft.ApplicationInsights": "[1.2.0, )"
+          "Microsoft.ApplicationInsights": "[1.2.3, )"
         },
         "compile": {
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.PersistenceChannel.dll": {}
@@ -8699,10 +8914,10 @@
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.PersistenceChannel.dll": {}
         }
       },
-      "Microsoft.ApplicationInsights.WindowsApps/1.1.0": {
+      "Microsoft.ApplicationInsights.WindowsApps/1.1.1": {
         "dependencies": {
-          "Microsoft.ApplicationInsights": "[1.1.0, )",
-          "Microsoft.ApplicationInsights.PersistenceChannel": "[1.1.0, )"
+          "Microsoft.ApplicationInsights": "[1.2.3, 1.2.3]",
+          "Microsoft.ApplicationInsights.PersistenceChannel": "[1.2.3, 1.2.3]"
         },
         "compile": {
           "lib/win81/Microsoft.ApplicationInsights.Extensibility.Windows.dll": {}
@@ -8995,7 +9210,7 @@
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
         }
       },
-      "Mindscape.Raygun4Net/5.1.1": {
+      "Mindscape.Raygun4Net/5.2.0": {
         "compile": {
           "lib/portable-net45+win81+wpa81+windows81/Mindscape.Raygun4Net.WindowsStore.dll": {}
         },
@@ -9018,7 +9233,7 @@
           "lib/windows81/GalaSoft.MvvmLight.Platform.dll": {}
         }
       },
-      "Newtonsoft.Json/7.0.1": {
+      "Newtonsoft.Json/8.0.2": {
         "compile": {
           "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll": {}
         },
@@ -9026,15 +9241,58 @@
           "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll": {}
         }
       },
-      "Portable.Ninject/3.3.1": {
+      "Rx-Core/2.3.0-beta2": {
+        "dependencies": {
+          "Rx-Interfaces": "[2.3.0-beta2, )"
+        },
         "compile": {
-          "lib/win8/Ninject.dll": {}
+          "lib/windows8/System.Reactive.Core.dll": {}
         },
         "runtime": {
-          "lib/win8/Ninject.dll": {}
+          "lib/windows8/System.Reactive.Core.dll": {}
         }
       },
-      "Serilog/1.5.11": {
+      "Rx-Interfaces/2.3.0-beta2": {
+        "compile": {
+          "lib/windows8/System.Reactive.Interfaces.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/System.Reactive.Interfaces.dll": {}
+        }
+      },
+      "Rx-Linq/2.3.0-beta2": {
+        "dependencies": {
+          "Rx-Core": "[2.3.0-beta2, )",
+          "Rx-Interfaces": "[2.3.0-beta2, )"
+        },
+        "compile": {
+          "lib/windows8/System.Reactive.Linq.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/System.Reactive.Linq.dll": {}
+        }
+      },
+      "Rx-Main/2.3.0-beta2": {
+        "dependencies": {
+          "Rx-Core": "[2.3.0-beta2, )",
+          "Rx-Interfaces": "[2.3.0-beta2, )",
+          "Rx-Linq": "[2.3.0-beta2, )",
+          "Rx-PlatformServices": "[2.3.0-beta2, )"
+        }
+      },
+      "Rx-PlatformServices/2.3.0-beta2": {
+        "dependencies": {
+          "Rx-Core": "[2.3.0-beta2, )",
+          "Rx-Interfaces": "[2.3.0-beta2, )"
+        },
+        "compile": {
+          "lib/windows8/System.Reactive.PlatformServices.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/System.Reactive.PlatformServices.dll": {}
+        }
+      },
+      "Serilog/1.5.14": {
         "compile": {
           "lib/portable-net45+win+wpa81+wp80+MonoAndroid10+MonoTouch10/Serilog.dll": {}
         },
@@ -10447,7 +10705,7 @@
           "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
         }
       },
-      "Microsoft.ApplicationInsights/1.2.0": {
+      "Microsoft.ApplicationInsights/1.2.3": {
         "compile": {
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
         },
@@ -10455,9 +10713,9 @@
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
         }
       },
-      "Microsoft.ApplicationInsights.PersistenceChannel/1.2.0": {
+      "Microsoft.ApplicationInsights.PersistenceChannel/1.2.3": {
         "dependencies": {
-          "Microsoft.ApplicationInsights": "[1.2.0, )"
+          "Microsoft.ApplicationInsights": "[1.2.3, )"
         },
         "compile": {
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.PersistenceChannel.dll": {}
@@ -10466,10 +10724,10 @@
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.PersistenceChannel.dll": {}
         }
       },
-      "Microsoft.ApplicationInsights.WindowsApps/1.1.0": {
+      "Microsoft.ApplicationInsights.WindowsApps/1.1.1": {
         "dependencies": {
-          "Microsoft.ApplicationInsights": "[1.1.0, )",
-          "Microsoft.ApplicationInsights.PersistenceChannel": "[1.1.0, )"
+          "Microsoft.ApplicationInsights": "[1.2.3, 1.2.3]",
+          "Microsoft.ApplicationInsights.PersistenceChannel": "[1.2.3, 1.2.3]"
         },
         "compile": {
           "lib/win81/Microsoft.ApplicationInsights.Extensibility.Windows.dll": {}
@@ -10743,7 +11001,7 @@
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
         }
       },
-      "Mindscape.Raygun4Net/5.1.1": {
+      "Mindscape.Raygun4Net/5.2.0": {
         "compile": {
           "lib/portable-net45+win81+wpa81+windows81/Mindscape.Raygun4Net.WindowsStore.dll": {}
         },
@@ -10766,7 +11024,7 @@
           "lib/windows81/GalaSoft.MvvmLight.Platform.dll": {}
         }
       },
-      "Newtonsoft.Json/7.0.1": {
+      "Newtonsoft.Json/8.0.2": {
         "compile": {
           "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll": {}
         },
@@ -10774,15 +11032,58 @@
           "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll": {}
         }
       },
-      "Portable.Ninject/3.3.1": {
+      "Rx-Core/2.3.0-beta2": {
+        "dependencies": {
+          "Rx-Interfaces": "[2.3.0-beta2, )"
+        },
         "compile": {
-          "lib/win8/Ninject.dll": {}
+          "lib/windows8/System.Reactive.Core.dll": {}
         },
         "runtime": {
-          "lib/win8/Ninject.dll": {}
+          "lib/windows8/System.Reactive.Core.dll": {}
         }
       },
-      "Serilog/1.5.11": {
+      "Rx-Interfaces/2.3.0-beta2": {
+        "compile": {
+          "lib/windows8/System.Reactive.Interfaces.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/System.Reactive.Interfaces.dll": {}
+        }
+      },
+      "Rx-Linq/2.3.0-beta2": {
+        "dependencies": {
+          "Rx-Core": "[2.3.0-beta2, )",
+          "Rx-Interfaces": "[2.3.0-beta2, )"
+        },
+        "compile": {
+          "lib/windows8/System.Reactive.Linq.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/System.Reactive.Linq.dll": {}
+        }
+      },
+      "Rx-Main/2.3.0-beta2": {
+        "dependencies": {
+          "Rx-Core": "[2.3.0-beta2, )",
+          "Rx-Interfaces": "[2.3.0-beta2, )",
+          "Rx-Linq": "[2.3.0-beta2, )",
+          "Rx-PlatformServices": "[2.3.0-beta2, )"
+        }
+      },
+      "Rx-PlatformServices/2.3.0-beta2": {
+        "dependencies": {
+          "Rx-Core": "[2.3.0-beta2, )",
+          "Rx-Interfaces": "[2.3.0-beta2, )"
+        },
+        "compile": {
+          "lib/windows8/System.Reactive.PlatformServices.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/System.Reactive.PlatformServices.dll": {}
+        }
+      },
+      "Serilog/1.5.14": {
         "compile": {
           "lib/portable-net45+win+wpa81+wp80+MonoAndroid10+MonoTouch10/Serilog.dll": {}
         },
@@ -12189,8 +12490,8 @@
         "package/services/metadata/core-properties/99be0c88b2fd41c8b07c42071005ee47.psmdcp"
       ]
     },
-    "Microsoft.ApplicationInsights/1.2.0": {
-      "sha512": "1WyfkRQc7aa2KObTCxfmS3ygUNRRvpjMWbn0xmQFzhZBbGzwzPZxldtARK5gbSzs7ohAhhcnnuJc8YQiHlZ/oA==",
+    "Microsoft.ApplicationInsights/1.2.3": {
+      "sha512": "a34atobxpucCTTX9VCD7aIu6Ydzry+Va7TxK2tTQcfaMvefGW4kUKtg9GHKIn19IaXe+A4oZt/GBqsOt5vQrBA==",
       "type": "Package",
       "files": [
         "[Content_Types].xml",
@@ -12204,11 +12505,11 @@
         "lib/wp8/Microsoft.ApplicationInsights.dll",
         "lib/wp8/Microsoft.ApplicationInsights.XML",
         "Microsoft.ApplicationInsights.nuspec",
-        "package/services/metadata/core-properties/da5f06b2e3b04210bf9a363361c5d800.psmdcp"
+        "package/services/metadata/core-properties/3b36eef276524f5d883c618d5fd8c500.psmdcp"
       ]
     },
-    "Microsoft.ApplicationInsights.PersistenceChannel/1.2.0": {
-      "sha512": "pTv9pUubCwzK1BCkB6d364EFFo6rMtL3+vCTcq20bfVwz1/5lqQwrx0Wdib9dAM8veySnnN4rjSNwIS9Kp5Zsg==",
+    "Microsoft.ApplicationInsights.PersistenceChannel/1.2.3": {
+      "sha512": "5MGcvPQVaGlGyAVh9adg4sSkIVSYDKn+H3+YnZa9hi1gH/g6UsRt4HLc8vp/IxjlbmXbJyAB7dYJV/NHmAGAgA==",
       "type": "Package",
       "files": [
         "[Content_Types].xml",
@@ -12222,11 +12523,11 @@
         "lib/wp8/Microsoft.ApplicationInsights.PersistenceChannel.dll",
         "lib/wp8/Microsoft.ApplicationInsights.PersistenceChannel.XML",
         "Microsoft.ApplicationInsights.PersistenceChannel.nuspec",
-        "package/services/metadata/core-properties/42ce22c3a6204867bb9fd1c714f1a6cf.psmdcp"
+        "package/services/metadata/core-properties/f973733421c14c3594986b3f2c22213a.psmdcp"
       ]
     },
-    "Microsoft.ApplicationInsights.WindowsApps/1.1.0": {
-      "sha512": "H6nhyM+ZVOhLmF8cqQj70fc5HZOS6dxh18nNwEM7+HD8NzArdSLK0gwGJkEOUYPtjner/0/3aOxgGZbFi9OVdA==",
+    "Microsoft.ApplicationInsights.WindowsApps/1.1.1": {
+      "sha512": "Orj0UQrjQ2z0aWZZoexl734Ge7Q4oVev3VFSsk6t8l2kImrfJ1eygkJWtQ1d7u0kF6MLLrvUvsMSxo+0rgPiMQ==",
       "type": "Package",
       "files": [
         "[Content_Types].xml",
@@ -12238,7 +12539,7 @@
         "lib/wpa81/Microsoft.ApplicationInsights.Extensibility.Windows.dll",
         "lib/wpa81/Microsoft.ApplicationInsights.Extensibility.Windows.XML",
         "Microsoft.ApplicationInsights.WindowsApps.nuspec",
-        "package/services/metadata/core-properties/441e5d0bc7164e089277ae041b2043cc.psmdcp"
+        "package/services/metadata/core-properties/8265b8c93c244c80b4e8bce27f31849d.psmdcp"
       ]
     },
     "Microsoft.AspNet.WebApi.Client/5.2.3": {
@@ -13095,8 +13396,8 @@
         "ref/xamarinmac20/_._"
       ]
     },
-    "Mindscape.Raygun4Net/5.1.1": {
-      "sha512": "rZZrcNSaQI8kLGcaqdnnz1c/rQURNajHvsMgALZF+lyzZ+VY6s8QDhh5t1biMVTpWjMM5G1DHWFheQiOZqOBzw==",
+    "Mindscape.Raygun4Net/5.2.0": {
+      "sha512": "zmoUFOQZizs+4Nz90pcwlDqPy2FSSSkrYZUOhDvnCNWJ8dwotX7zangc9wrMKTrdDdnC4bCiP3d/DMmlRn504g==",
       "type": "Package",
       "files": [
         "[Content_Types].xml",
@@ -13127,7 +13428,7 @@
         "lib/wp71/Mindscape.Raygun4Net.WindowsPhone.pdb",
         "lib/Xamarin.iOS10/Mindscape.Raygun4Net.Xamarin.iOS.Unified.dll",
         "Mindscape.Raygun4Net.nuspec",
-        "package/services/metadata/core-properties/a4f73e5750f84cfa857edcc5190596cc.psmdcp",
+        "package/services/metadata/core-properties/2cf080ad60ca4f9b9d7009ea59080410.psmdcp",
         "readme.txt"
       ]
     },
@@ -13265,8 +13566,8 @@
         "package/services/metadata/core-properties/2416d2969a834c638aba3851d652cc13.psmdcp"
       ]
     },
-    "Newtonsoft.Json/7.0.1": {
-      "sha512": "q3V4KLetMLnt1gpAVWgtXnHjKs0UG/RalBc29u2ZKxd5t5Ze4JBL5WiiYIklJyK/5CRiIiNwigVQUo0FgbsuWA==",
+    "Newtonsoft.Json/8.0.2": {
+      "sha512": "e5yWmEfu68rmtG431zl9N/7PlNKQDIuiDW5MHlEFAZcecakcxrIGnKqrPAtWNILzK2oNanRB5cD150MYhECK3g==",
       "type": "Package",
       "files": [
         "[Content_Types].xml",
@@ -13284,42 +13585,134 @@
         "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll",
         "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.xml",
         "Newtonsoft.Json.nuspec",
-        "package/services/metadata/core-properties/49e907fc018c4c7ab632e6d4ad4766f8.psmdcp",
+        "package/services/metadata/core-properties/cc8c591d554640789c6a6ef6456f7772.psmdcp",
         "tools/install.ps1"
       ]
     },
-    "Portable.Ninject/3.3.1": {
-      "sha512": "hq+v/D/rxNSStlfV0hVlfIQKVEbj2AsZKcuuUqqPpOnuD6HSl4ku3fvgQ7u6ffAh6ZwHUBG3pdP7PS+eb+Kumw==",
+    "Rx-Core/2.3.0-beta2": {
+      "sha512": "ufLvowEi6bzrCrRSEY3RS/gUbV6axNAT9uzsbGDWeAShcwSBbOSxlcioQsvlYCgzAAB15WK9dM1f0sUk4NTE6w==",
       "type": "Package",
       "files": [
         "[Content_Types].xml",
         "_rels/.rels",
-        "lib/monoandroid/Ninject.dll",
-        "lib/monoandroid/Ninject.xml",
-        "lib/monotouch/Ninject.dll",
-        "lib/monotouch/Ninject.xml",
-        "lib/net40-client/Ninject.dll",
-        "lib/net40-client/Ninject.xml",
-        "lib/portable-net4+sl5+wp8+win8+wpa81+monotouch+monoandroid+Xamarin.iOS/Ninject.dll",
-        "lib/portable-net4+sl5+wp8+win8+wpa81+monotouch+monoandroid+Xamarin.iOS/Ninject.xml",
-        "lib/sl5/Ninject.dll",
-        "lib/sl5/Ninject.xml",
-        "lib/win8/Ninject.dll",
-        "lib/win8/Ninject.pri",
-        "lib/win8/Ninject.xml",
-        "lib/wp8/Ninject.dll",
-        "lib/wp8/Ninject.xml",
-        "lib/Wpa81/Ninject.dll",
-        "lib/Wpa81/Ninject.pri",
-        "lib/Wpa81/Ninject.xml",
-        "lib/Xamarin.iOS/Ninject.dll",
-        "lib/Xamarin.iOS/Ninject.xml",
-        "package/services/metadata/core-properties/ae00f04a35c4411ea5588873af79bf19.psmdcp",
-        "Portable.Ninject.nuspec"
+        "lib/net40/System.Reactive.Core.dll",
+        "lib/net40/System.Reactive.Core.XML",
+        "lib/net45/System.Reactive.Core.dll",
+        "lib/net45/System.Reactive.Core.XML",
+        "lib/net46/System.Reactive.Core.dll",
+        "lib/net46/System.Reactive.Core.XML",
+        "lib/portable-net40+sl5+win8+wp8/System.Reactive.Core.dll",
+        "lib/portable-net40+sl5+win8+wp8/System.Reactive.Core.XML",
+        "lib/portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1/System.Reactive.Core.dll",
+        "lib/portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1/System.Reactive.Core.XML",
+        "lib/portable-win81+wpa81/System.Reactive.Core.dll",
+        "lib/portable-win81+wpa81/System.Reactive.Core.XML",
+        "lib/sl5/System.Reactive.Core.dll",
+        "lib/sl5/System.Reactive.Core.XML",
+        "lib/windows8/System.Reactive.Core.dll",
+        "lib/windows8/System.Reactive.Core.XML",
+        "lib/windowsphone8/System.Reactive.Core.dll",
+        "lib/windowsphone8/System.Reactive.Core.XML",
+        "package/services/metadata/core-properties/adc0a55d0ca947dc98443cf265dc770a.psmdcp",
+        "Rx-Core.nuspec"
       ]
     },
-    "Serilog/1.5.11": {
-      "sha512": "XNMHuP9eRWk7ffNtEAtACoBqqrSGfioQnEbeK/boi/qtamh3ZgYXvUwH9/PytJdg3LGOIT0quyTiCNaqYlJUuQ==",
+    "Rx-Interfaces/2.3.0-beta2": {
+      "sha512": "YgUHTMj9qNKF2+zdXsAAkXy5cYvTHD/OSXG0PkVu/QDRDvHcINR+EsKqh3Dh9Tjssvsivs8cXuO3rV0GnSqMbg==",
+      "type": "Package",
+      "files": [
+        "[Content_Types].xml",
+        "_rels/.rels",
+        "lib/net40/System.Reactive.Interfaces.dll",
+        "lib/net40/System.Reactive.Interfaces.XML",
+        "lib/net45/System.Reactive.Interfaces.dll",
+        "lib/net45/System.Reactive.Interfaces.XML",
+        "lib/net46/System.Reactive.Interfaces.dll",
+        "lib/net46/System.Reactive.Interfaces.XML",
+        "lib/portable-net40+sl5+win8+wp8/System.Reactive.Interfaces.dll",
+        "lib/portable-net40+sl5+win8+wp8/System.Reactive.Interfaces.XML",
+        "lib/portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1/System.Reactive.Interfaces.dll",
+        "lib/portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1/System.Reactive.Interfaces.XML",
+        "lib/portable-win81+wpa81/System.Reactive.Interfaces.dll",
+        "lib/portable-win81+wpa81/System.Reactive.Interfaces.XML",
+        "lib/sl5/System.Reactive.Interfaces.dll",
+        "lib/sl5/System.Reactive.Interfaces.XML",
+        "lib/windows8/System.Reactive.Interfaces.dll",
+        "lib/windows8/System.Reactive.Interfaces.XML",
+        "lib/windowsphone8/System.Reactive.Interfaces.dll",
+        "lib/windowsphone8/System.Reactive.Interfaces.XML",
+        "package/services/metadata/core-properties/03d381598db047d7a93bf54e424139cc.psmdcp",
+        "Rx-Interfaces.nuspec"
+      ]
+    },
+    "Rx-Linq/2.3.0-beta2": {
+      "sha512": "3VTu/AvESi12ucOYWlpv4aZT3xkV7BYG4zUHV+IV3fj+mWx0C9M8jtn99oQ2AZsLx7wsWpYNqCiwyPeqwNmWHQ==",
+      "type": "Package",
+      "files": [
+        "[Content_Types].xml",
+        "_rels/.rels",
+        "lib/net40/System.Reactive.Linq.dll",
+        "lib/net40/System.Reactive.Linq.XML",
+        "lib/net45/System.Reactive.Linq.dll",
+        "lib/net45/System.Reactive.Linq.XML",
+        "lib/net46/System.Reactive.Linq.dll",
+        "lib/net46/System.Reactive.Linq.XML",
+        "lib/portable-net40+sl5+win8+wp8/System.Reactive.Linq.dll",
+        "lib/portable-net40+sl5+win8+wp8/System.Reactive.Linq.XML",
+        "lib/portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1/System.Reactive.Linq.dll",
+        "lib/portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1/System.Reactive.Linq.XML",
+        "lib/portable-win81+wpa81/System.Reactive.Linq.dll",
+        "lib/portable-win81+wpa81/System.Reactive.Linq.XML",
+        "lib/sl5/System.Reactive.Linq.dll",
+        "lib/sl5/System.Reactive.Linq.XML",
+        "lib/windows8/System.Reactive.Linq.dll",
+        "lib/windows8/System.Reactive.Linq.XML",
+        "lib/windowsphone8/System.Reactive.Linq.dll",
+        "lib/windowsphone8/System.Reactive.Linq.XML",
+        "package/services/metadata/core-properties/1873dac86e1345578c7a81d48de747bd.psmdcp",
+        "Rx-Linq.nuspec"
+      ]
+    },
+    "Rx-Main/2.3.0-beta2": {
+      "sha512": "zss81QC+I0UiKJhNOnjDY6ildp0vR+QKZfxZh4E1wmUR7JivePlMf86Qashesywm+rCKVtLeHKj/eZk5gpeUaw==",
+      "type": "Package",
+      "files": [
+        "[Content_Types].xml",
+        "_rels/.rels",
+        "package/services/metadata/core-properties/f246d330e0de42999a69be97cae68958.psmdcp",
+        "Rx-Main.nuspec"
+      ]
+    },
+    "Rx-PlatformServices/2.3.0-beta2": {
+      "sha512": "AFDbK+gVGqd2rNBwsXjrWX+PwWIQ34IE8DnP2wnl+LT7menKe1mpjwUANTFN349zMZY3eTtr34N4vtdHgX65yw==",
+      "type": "Package",
+      "files": [
+        "[Content_Types].xml",
+        "_rels/.rels",
+        "lib/net40/System.Reactive.PlatformServices.dll",
+        "lib/net40/System.Reactive.PlatformServices.XML",
+        "lib/net45/System.Reactive.PlatformServices.dll",
+        "lib/net45/System.Reactive.PlatformServices.XML",
+        "lib/net46/System.Reactive.PlatformServices.dll",
+        "lib/net46/System.Reactive.PlatformServices.XML",
+        "lib/portable-net40+sl5+win8+wp8/System.Reactive.PlatformServices.dll",
+        "lib/portable-net40+sl5+win8+wp8/System.Reactive.PlatformServices.XML",
+        "lib/portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1/System.Reactive.PlatformServices.dll",
+        "lib/portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1/System.Reactive.PlatformServices.XML",
+        "lib/portable-win81+wpa81/System.Reactive.PlatformServices.dll",
+        "lib/portable-win81+wpa81/System.Reactive.PlatformServices.XML",
+        "lib/sl5/System.Reactive.PlatformServices.dll",
+        "lib/sl5/System.Reactive.PlatformServices.XML",
+        "lib/windows8/System.Reactive.PlatformServices.dll",
+        "lib/windows8/System.Reactive.PlatformServices.XML",
+        "lib/windowsphone8/System.Reactive.PlatformServices.dll",
+        "lib/windowsphone8/System.Reactive.PlatformServices.XML",
+        "package/services/metadata/core-properties/2bc5ebdd432e48e1b205e44dd5f71350.psmdcp",
+        "Rx-PlatformServices.nuspec"
+      ]
+    },
+    "Serilog/1.5.14": {
+      "sha512": "i5C+/F27bliSk/Kbzh0vRElU76w+EjnoIe0WnH3olbaaoXsm3Nf5bb7UKxGJTeXJjaQ//b92+wAsdJd/8FQjGg==",
       "type": "Package",
       "files": [
         "[Content_Types].xml",
@@ -13339,7 +13732,7 @@
         "lib/portable-net45+win+wpa81+wp80+MonoAndroid10+MonoTouch10/Serilog.dll",
         "lib/portable-net45+win+wpa81+wp80+MonoAndroid10+MonoTouch10/Serilog.pdb",
         "lib/portable-net45+win+wpa81+wp80+MonoAndroid10+MonoTouch10/Serilog.XML",
-        "package/services/metadata/core-properties/26f1d5b0eb124919b4b5fc603978560d.psmdcp",
+        "package/services/metadata/core-properties/3cc93886ff4c4c9e81e44f7d4f5ad7cd.psmdcp",
         "Serilog.nuspec"
       ]
     },
@@ -16069,16 +16462,14 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "Microsoft.ApplicationInsights >= 1.2.0",
-      "Microsoft.ApplicationInsights.PersistenceChannel >= 1.2.0",
-      "Microsoft.ApplicationInsights.WindowsApps >= 1.1.0",
+      "Microsoft.ApplicationInsights.WindowsApps >= 1.1.1",
       "Microsoft.AspNet.WebApi.Client >= 5.2.3",
       "Microsoft.NETCore.UniversalWindowsPlatform >= 5.0.0",
-      "Mindscape.Raygun4Net >= 5.1.1",
+      "Mindscape.Raygun4Net >= 5.2.0",
       "MvvmLightLibs >= 5.2.0",
-      "Newtonsoft.Json >= 7.0.1",
-      "Portable.Ninject >= 3.3.1",
-      "Serilog >= 1.5.11",
+      "Newtonsoft.Json >= 8.0.2",
+      "Rx-Main >= 2.3.0-beta2",
+      "Serilog >= 1.5.14",
       "Unity >= 4.0.1"
     ],
     "UAP,Version=v10.0": []

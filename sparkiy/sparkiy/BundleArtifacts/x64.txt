@@ -1,1 +1,2 @@
-MainPackage=C:\Users\Aleksandar Toplek\Documents\GitHubVisualStudio\client-w10\sparkiy\sparkiy\bin\x64\Debug\sparkiy_2.0.0.0_x64_Debug.appx
+MainPackage=C:\Users\Aleksandar Toplek\Documents\GitHubVisualStudio\client-w10\sparkiy\sparkiy\bin\x86\Debug\x64\sparkiy\sparkiy_2.0.0.0_x64_Debug.appx
+SymbolPackage=C:\Users\Aleksandar Toplek\Documents\GitHubVisualStudio\client-w10\sparkiy\sparkiy\AppPackages\sparkiy_2.0.0.0_Debug_Test\sparkiy_2.0.0.0_x64_Debug.appxsym
